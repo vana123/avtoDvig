@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Output directory
+/dist
+
+# Temporary files
+*.tmp
+*.log
+
+# Sass cache
+.sass-cache/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+
+# Gulp generated files
+/.cache
+
+# Miscellaneous
+*.bak
+*.origgit
