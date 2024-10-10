@@ -13,6 +13,10 @@ const paths = {
   styles: {
     src: 'src/styles/**/*.scss',
     dest: 'dist/css/'
+  },
+  fonts: {
+    src: 'src/fonts/**/*',
+    dest: 'dist/fonts/'
   }
 };
 
@@ -39,6 +43,14 @@ function styles() {
     .pipe(browserSync.stream());
 }
 
+// Завдання для шрифтів
+function fonts() {
+  return gulp
+    .src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest))
+    .pipe(browserSync.stream());
+}
+
 // Очищення папки dist
 async function clean() {
   const { deleteAsync } = await import('del');
@@ -54,14 +66,16 @@ function watchFiles() {
   });
   gulp.watch(paths.html.watch, html);
   gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.fonts.src, fonts);
 }
 
 // Серія завдань для зборки
-const build = gulp.series(clean, gulp.parallel(html, styles));
+const build = gulp.series(clean, gulp.parallel(html, styles, fonts));
 const watch = gulp.series(build, watchFiles);
 
 exports.html = html;
 exports.styles = styles;
+exports.fonts = fonts;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
