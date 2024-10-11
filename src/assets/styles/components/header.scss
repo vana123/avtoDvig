@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.header {
+	background: #fff;
+	padding: $spacing-base;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: $container-width;
+		margin: 0 auto;
+	}
+
+	&__logo {
+		img {
+			max-height: 50px;
+		}
+	}
+}

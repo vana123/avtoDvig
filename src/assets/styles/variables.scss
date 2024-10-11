@@ -1,0 +1,37 @@
+// Основні кольори
+$primary-color: #c0392b; // Основний колір сайту (червоний, згідно макету)
+$secondary-color: #2ecc71; // Додатковий колір
+$background-color: #f5f5f5; // Колір фону
+$text-color: #333; // Основний колір тексту
+$link-color: #c0392b; // Колір посилань (червоний, згідно макету)
+
+// Кольори для сповіщень
+$success-color: #27ae60; // Успіх
+$error-color: #e74c3c; // Помилка
+$warning-color: #f1c40f; // Попередження
+$info-color: #3498db; // Інформація
+
+// Відступи
+$spacing-small: 8px;
+$spacing-base: 16px;
+$spacing-large: 24px;
+$spacing-xlarge: 32px;
+
+// Розміри контейнера
+$container-width: 1200px; // Максимальна ширина контейнера
+$container-padding: 16px; // Внутрішні відступи контейнера
+
+// Тіні
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Збільшена тінь для відповідності макету
+
+// Медіа-запити
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Інші змінні
+$border-radius: 8px; // Збільшений радіус заокруглення для відповідності макету
+$transition-duration: 0.3s; // Тривалість анімації переходу
+$z-index-header: 1000; // Z-індекс для хедера
+$z-index-modal: 1050; // Z-індекс для модальних вікон

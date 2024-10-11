@@ -1,0 +1,15 @@
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+
+	&__like {
+		background-image: url(../images/icons/like.svg);
+	}
+	&__user {
+		background-image: url(../images/icons/user.svg);
+	}
+	&__heart-fill {
+		background-image: url(../images/icons/heart-fill.svg);
+	}
+}

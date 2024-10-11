@@ -1,10 +1,12 @@
+@import './variables.scss';
+
 @font-face {
 	font-family: "e-Ukraine";
 	src: url("../fonts/e-ukraine-light_w.ttf");
 }
 
 body {
-	color: rgb(0, 0, 0);
+	color: $text-color;
 	font-family: "e-Ukraine", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;

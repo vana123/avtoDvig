@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
+const replace = require('gulp-replace');
 
 // Шляхи до файлів
 const paths = {
@@ -11,19 +12,19 @@ const paths = {
     dest: 'dist/'
   },
   styles: {
-    src: 'src/styles/**/*.scss',
+    src: 'src/assets/styles/**/*.scss',
     dest: 'dist/assets/css/'
   },
   fonts: {
-    src: 'src/fonts/**/*',
+    src: 'src/assets/fonts/**/*',
     dest: 'dist/assets/fonts/'
   },
   scripts: {
-    src: 'src/scripts/**/*.js',
+    src: 'src/assets/scripts/**/*.js',
     dest: 'dist/assets/js/'
   },
   images: {
-    src: 'src/images/**/*',
+    src: 'src/assets/images/**/*.{png,jpg,jpeg,gif,svg}',
     dest: 'dist/assets/images/'
   }
 };
@@ -38,6 +39,7 @@ function html() {
         basepath: '@file'
       })
     )
+    .pipe(replace(/src=['"](?:\.\.\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
     .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.stream());
 }
@@ -62,8 +64,11 @@ function fonts() {
 // Завдання для зображень
 function images() {
   return gulp
-    .src(paths.images.src)
+    .src(paths.images.src, { allowEmpty: true })
     .pipe(gulp.dest(paths.images.dest))
+    .on('data', function(file) {
+      console.log('Копіюється зображення:', file.path);
+    })
     .pipe(browserSync.stream());
 }
 
