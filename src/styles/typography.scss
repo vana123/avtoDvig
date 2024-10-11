@@ -1,17 +1,61 @@
 @font-face {
-	font-family: 'e-Ukraine';
-    src: url('../fonts/e-ukraine-light_w.ttf');
+	font-family: "e-Ukraine";
+	src: url("../fonts/e-ukraine-light_w.ttf");
 }
 
 body {
 	color: rgb(0, 0, 0);
-	font-family: "e-Ukraine";
+	font-family: "e-Ukraine", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5rem;
+	letter-spacing: 0%;
+	text-align: left;
+}
+
+.smallText {
+	font-size: 0.81rem;
+	font-weight: 400;
+	line-height: 1.13rem;
+}
+
+.tinyText {
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1rem;
 }
 
 h1 {
 	font-size: 56px;
 	font-weight: 400;
 	line-height: 64px;
-	letter-spacing: 0%;
-	text-align: left;
+}
+
+h2 {
+	font-size: 2.38rem;
+	font-weight: 400;
+	line-height: 2.5rem;
+}
+h3 {
+	font-size: 1.75rem;
+	font-weight: 400;
+	line-height: 2rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 2rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 1.5rem;
+}
+
+h6 {
+	font-size: 1.13rem;
+	font-weight: 400;
+	line-height: 1.5rem;
 }
