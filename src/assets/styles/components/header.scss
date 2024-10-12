@@ -1,6 +1,9 @@
 @import "../variables.scss";
 
 .header {
+	z-index: $z-index-header;
+
+	position: absolute;
 	background-color: #fff;
 	border-radius: 0rem 0rem 2.19rem 2.19rem;
 	width: 100%;
@@ -11,7 +14,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		max-width: $container-width;
+		width: $container-width;
 		margin: 0 auto;
 	}
 
