@@ -64,7 +64,7 @@ function fonts() {
 // Завдання для зображень
 function images() {
   return gulp
-    .src(paths.images.src, { allowEmpty: true })
+    .src(paths.images.src, { allowEmpty: true, encoding: false })
     .pipe(gulp.dest(paths.images.dest))
     .on('data', function(file) {
       console.log('Копіюється зображення:', file.path);
