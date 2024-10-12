@@ -1,9 +1,11 @@
 @import "../variables.scss";
 
 .header {
-	background: #fff;
-	padding: $spacing-base;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	border-radius: 0rem 0rem 2.19rem 2.19rem;
+	width: 100%;
+
+	padding: 0.88rem 7.94rem 0.88rem 7.94rem;
 
 	&__content {
 		display: flex;
