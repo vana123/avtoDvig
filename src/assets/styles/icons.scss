@@ -5,6 +5,7 @@
 	height: 1.5rem;
 	background-size: cover;
 	background-position: center;
+	display: block;
 
 	&__like {
 		background-image: url(../images/icons/like.svg);
@@ -47,5 +48,8 @@
 	}
 	&__shield-lock{
 		background-image: url(../images/icons/shield-lock.svg);
+	}
+	&__menu{
+		background-image: url(../images/icons/menu.svg);
 	}
 }

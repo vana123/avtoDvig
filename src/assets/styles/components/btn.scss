@@ -13,9 +13,16 @@
 	border-radius: 50px;
 	border: none;
 	background-color: $primary-color;
+	@media screen and (max-width: 1322px) {
+		font-size: 14px;
+		padding: 5px 11.5px;
+	}
+	@media screen and (max-width: $breakpoint-xl) {
+		font-size: 10px;
+	}
 	&-outlined {
 		cursor: pointer;
-        background-color: #ffffff00;
+		background-color: #ffffff00;
 		border: 0.06rem solid rgb(25, 25, 25);
 		border-radius: 3.13rem;
 		padding: 11px 36px;
@@ -31,8 +38,8 @@
 			align-items: center;
 			border: 0.06rem solid #fff;
 			border-radius: 3.13rem;
-            color: #fff;
-            background-color: #ffffff00;
+			color: #fff;
+			background-color: #ffffff00;
 		}
 	}
 

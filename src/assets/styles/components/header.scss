@@ -14,7 +14,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: $container-width;
+		max-width: $container-width;
 		margin: 0 auto;
 	}
 
