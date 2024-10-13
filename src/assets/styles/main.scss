@@ -9,10 +9,17 @@
 @import './components/header-nav.scss';
 @import './components/btn.scss';
 @import './components/form.scss';
+@import './components/card-car.scss';
 
 
 @import './components/section-baner.scss';
+@import './components/section-general.scss';
 
 body{
     background-color: $background-color;
+}
+
+.container{
+    max-width: $container-width;
+    margin: 0  auto;
 }

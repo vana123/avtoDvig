@@ -9,12 +9,30 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 13.5px 24.5px;
+	padding: 11px 11.5px;
 	border-radius: 50px;
 	border: none;
 	background-color: $primary-color;
+	&-outlined {
+		cursor: pointer;
+		border: 0.06rem solid rgb(25, 25, 25);
+		border-radius: 3.13rem;
+		padding: 11px 36px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 
-    &-ukraine{
-        background: linear-gradient(0.00deg, rgb(182, 186, 0),rgb(185, 174, 30) 11.9%,rgb(163, 147, 6) 39.4%,rgb(125, 142, 26) 44.9%,rgb(13, 80, 127) 71.4%,rgb(0, 57, 98) 100%);
-    }
+	&-ukraine {
+		background: linear-gradient(
+			0deg,
+			rgb(182, 186, 0),
+			rgb(185, 174, 30) 11.9%,
+			rgb(163, 147, 6) 39.4%,
+			rgb(125, 142, 26) 44.9%,
+			rgb(13, 80, 127) 71.4%,
+			rgb(0, 57, 98) 100%
+		);
+	}
 }

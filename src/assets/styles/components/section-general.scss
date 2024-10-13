@@ -1,0 +1,18 @@
+.sectionGeneral{
+    width: 100%;
+    margin: 45px auto;
+    &__title{
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+    }
+    &__midleBtn{
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+}

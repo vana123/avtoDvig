@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .icon {
 	width: 1.5rem;
 	height: 1.5rem;
@@ -11,5 +13,26 @@
 	}
 	&__heart-fill {
 		background-image: url(../images/icons/heart-fill.svg);
+	}
+	&__calendar-month {
+		background-image: url(../images/icons/calendar-month.svg);
+	}
+	&__dashboard{
+		background-image: url(../images/icons/dashboard.svg);
+	}
+	&__gas-station{
+		background-image: url(../images/icons/gas-station.svg);
+	}
+	&__droplet{
+		background-image: url(../images/icons/droplet.svg);
+	}
+	&__bolt{
+		background-image: url(../images/icons/bolt.svg);
+	}
+	&__car-turbine{
+		background-image: url(../images/icons/car-turbine.svg);
+	}
+	&__automatic-gearbox{
+		background-image: url(../images/icons/automatic-gearbox.svg);
 	}
 }
