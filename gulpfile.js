@@ -31,18 +31,23 @@ const paths = {
 
 // Завдання для HTML
 function html() {
-  return gulp
-    .src(paths.html.src)
-    .pipe(
-      fileInclude({
-        prefix: '@@',
-        basepath: '@file'
-      })
-    )
-    .pipe(replace(/src=['"](?:\.\.\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
-    .pipe(gulp.dest(paths.html.dest))
-    .pipe(browserSync.stream());
-}
+    return gulp
+      .src(paths.html.src)
+      .pipe(
+        fileInclude({
+          prefix: '@@',
+          basepath: '@file',
+          context: {
+            // Вкажіть тут будь-які змінні, які хочете передати
+            title: 'titel'
+          }
+        })
+      )
+      .pipe(replace(/src=['"](?:\.{1,2}\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
+      .pipe(gulp.dest(paths.html.dest))
+      .pipe(browserSync.stream());
+  }
+  
 
 // Завдання для CSS
 function styles() {

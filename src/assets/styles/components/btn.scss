@@ -15,6 +15,7 @@
 	background-color: $primary-color;
 	&-outlined {
 		cursor: pointer;
+        background-color: #ffffff00;
 		border: 0.06rem solid rgb(25, 25, 25);
 		border-radius: 3.13rem;
 		padding: 11px 36px;
@@ -22,6 +23,17 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		&-contrast {
+			padding: 11px 36px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			border: 0.06rem solid #fff;
+			border-radius: 3.13rem;
+            color: #fff;
+            background-color: #ffffff00;
+		}
 	}
 
 	&-ukraine {

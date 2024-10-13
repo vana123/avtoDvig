@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Головна сторінка</title>
-  <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-  @@include('components/header.html')
-  @@include('./components/section-baner.html')
-  <section class="sectionGeneral">
-    <div class="container">
-        <h2 class="sectionGeneral__title">КАТАЛОГ АВТО</h2>
-        <div class="sectionGeneral__grid">
-            @@include('./components/card-car.html')
-            @@include('./components/card-car.html')
-            @@include('./components/card-car.html')
-        </div>
-        <button class="btn-outlined sectionGeneral__midleBtn ">ПЕРЕГЛЯНУТИ БІЛЬШЕ</button>
-    </div>
-  </section>
-  @@include('components/footer.html')
-  <span class="icon icon__like"></span>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Головна сторінка</title>
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		@@include('components/header.html')
+		@@include('./components/section-baner.html')
+		<section class="sectionGeneral">
+			<div class="container">
+				<h2 class="sectionGeneral__title">КАТАЛОГ АВТО</h2>
+				<div class="sectionGeneral__grid">
+					@@include('./components/card-car.html')
+					@@include('./components/card-car.html')
+					@@include('./components/card-car.html')
+				</div>
+				<button class="btn-outlined sectionGeneral__midleBtn">
+					ПЕРЕГЛЯНУТИ БІЛЬШЕ
+				</button>
+			</div>
+		</section>
+        <section  class="sectionGeneral-contrast">
+            <div class="container">
+                <h2 class="sectionGeneral-contrast__title">послуги</h2>
+                <div class="sectionGeneral__grid">
+                    @@include('./components/service-card.html', {"title": "Авто під замовлення", "icon": "car"})
+                    @@include('./components/service-card.html', {"title": "Авто з аукціону", "icon": "gavel"})
+                    @@include('./components/service-card.html', {"title": "Лізинг авто", "icon": "report-money"})
+                    @@include('./components/service-card.html', {"title": "Брокерські послуги", "icon": "shield-lock"})
+                </div>
+                <button class="btn-outlined btn-outlined-contrast sectionGeneral__midleBtn">ПЕРЕГЛЯНУТИ БІЛЬШЕ</button>
+            </div>
+        </section>
+		@@include('components/footer.html')
+		<span class="icon icon__like"></span>
+	</body>
 </html>

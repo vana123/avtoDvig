@@ -3,7 +3,8 @@
 .icon {
 	width: 1.5rem;
 	height: 1.5rem;
-	display: block;
+	background-size: cover;
+	background-position: center;
 
 	&__like {
 		background-image: url(../images/icons/like.svg);
@@ -34,5 +35,17 @@
 	}
 	&__automatic-gearbox{
 		background-image: url(../images/icons/automatic-gearbox.svg);
+	}
+	&__car{
+		background-image: url(../images/icons/car.svg);
+	}
+	&__gavel{
+		background-image: url(../images/icons/gavel.svg);
+	}
+	&__report-money{
+		background-image: url(../images/icons/report-money.svg);
+	}
+	&__shield-lock{
+		background-image: url(../images/icons/shield-lock.svg);
 	}
 }
