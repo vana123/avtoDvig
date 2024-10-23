@@ -1,0 +1,29 @@
+.sectionGeneral {
+  width: 100%;
+  margin: 45px auto;
+}
+.sectionGeneral__title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.sectionGeneral__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+}
+.sectionGeneral__midleBtn {
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.sectionGeneral-contrast {
+  color: #fff;
+  margin: 0 30px;
+  padding: 40px 0;
+  background-color: #191919;
+  border-radius: 1.25rem;
+}
+.sectionGeneral-contrast__title {
+  text-align: center;
+}
