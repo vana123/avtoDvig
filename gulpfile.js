@@ -3,6 +3,7 @@ const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const replace = require('gulp-replace');
+const ghPages = require('gulp-gh-pages');
 
 // Шляхи до файлів
 const paths = {
@@ -31,23 +32,18 @@ const paths = {
 
 // Завдання для HTML
 function html() {
-    return gulp
-      .src(paths.html.src)
-      .pipe(
-        fileInclude({
-          prefix: '@@',
-          basepath: '@file',
-          context: {
-            // Вкажіть тут будь-які змінні, які хочете передати
-            title: 'titel'
-          }
-        })
-      )
-      .pipe(replace(/src=['"](?:\.{1,2}\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
-      .pipe(gulp.dest(paths.html.dest))
-      .pipe(browserSync.stream());
-  }
-  
+  return gulp
+    .src(paths.html.src)
+    .pipe(
+      fileInclude({
+        prefix: '@@',
+        basepath: '@file'
+      })
+    )
+    .pipe(replace(/src=['"](?:\.{1,2}\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(browserSync.stream());
+}
 
 // Завдання для CSS
 function styles() {
@@ -105,6 +101,12 @@ function watchFiles() {
   gulp.watch(paths.scripts.src, scripts);
 }
 
+// Завдання для розгортання на GitHub Pages
+function deploy() {
+  return gulp.src('./dist/**/*', { encoding: false })
+    .pipe(ghPages());
+}
+
 // Серія завдань для зборки
 const build = gulp.series(clean, gulp.parallel(html, styles, fonts, images, scripts));
 const watch = gulp.series(build, watchFiles);
@@ -118,3 +120,4 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
+exports.deploy = gulp.series(build, deploy);

@@ -1,0 +1,141 @@
+@import "../variables.scss";
+
+.footer {
+
+    margin-top: 45px;
+	background-color: $text-color;
+	border-radius: 2.19rem 2.19rem 0rem 0rem;
+    &__content{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+	h2 {
+		grid-column: 1 / span 12;
+		color: $background-color;
+		font-size: 3.5rem;
+		font-weight: 200;
+		line-height: 3.75rem;
+		letter-spacing: 0%;
+	}
+
+	img {
+		grid-column: 1 / span 4;
+		max-width: 100%;
+        // width: 262px;
+		align-self: center;
+	}
+
+	p {
+		grid-column: 1 / span 12;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.footer__phones {
+		grid-column: 5 / span 4;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.btn {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			background: none;
+			border: 1px solid #fff;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+
+			.icon__phone {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.footer__social {
+		grid-column: 10 / span 3;
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		align-items: center;
+
+		.icon {
+			font-size: 20px;
+		}
+	}
+
+	.footer__map {
+		grid-column: 1 / span 12;
+		height: 150px;
+		background: url("/path/to/map-image.png") no-repeat center;
+		background-size: cover;
+		margin-top: 20px;
+	}
+}
+
+// Media queries to make it responsive
+@media (max-width: 768px) {
+	.footer {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, auto);
+
+		h2,
+		img,
+		p,
+		.footer__phones,
+		.footer__social,
+		.footer__map {
+			grid-column: 1 / -1;
+			text-align: center;
+		}
+
+		.footer__phones {
+			align-items: center;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.footer {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, auto);
+		gap: 10px;
+		padding: 10px;
+
+		h2 {
+			font-size: 20px;
+		}
+
+		img {
+			max-width: 80%;
+			margin: 0 auto;
+		}
+
+		p {
+			font-size: 14px;
+		}
+
+		.footer__phones {
+			.btn {
+				padding: 8px;
+				font-size: 14px;
+			}
+		}
+
+		.footer__social {
+			gap: 5px;
+
+			.icon {
+				font-size: 18px;
+			}
+		}
+
+		.footer__map {
+			height: 100px;
+		}
+	}
+}
