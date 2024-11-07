@@ -1,5 +1,7 @@
 @import "../variables.scss";
 
+$mobile_footer_width: 768px;
+
 .footer {
 	width: 100%;
 	background-color: $text-color;
@@ -8,20 +10,54 @@
 	margin-top: 35px;
 	border-radius: 35px 35px 0px 0px;
 
-	&__title {
-		font-size: 26px;
-		font-weight: 200;
-		line-height: 28px;
-		letter-spacing: -2%;
-	}
 
-	&__logo {
-		width: 230px;
-	}
+	&__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+                "title title phones"
+                "logo adres socIcons"
+                "map map map"
+                "footer footer footer";
+                align-items: end;
+        }
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 300;
+        line-height: 28px;
+        letter-spacing: -0.02em;
+        margin-bottom: 15px;
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: title;
+            align-self: start;
+        }
+
+    }
+
+    &__logo {
+        width: 230px;
+        margin-bottom: 15px;
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: logo;
+        }
+    }
+
+    &__phones {
+        columns: 2;
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: phones;
+        }
+    }
 
 	&__phone {
 		display: flex;
-		width: fit-content;
+        width: fit-content;
 		color: $background-color;
 		border: 0.5px solid rgb(255, 255, 255);
 		font-size: 18px;
@@ -29,6 +65,9 @@
 		line-height: 28px;
 		border-radius: 20px;
 		padding: 4.5px 15px;
+        white-space: nowrap;
+
+		margin-bottom: 15px;
 	}
 
 	&__up {
@@ -51,6 +90,10 @@
 			width: 31px;
 			margin: 0 10px;
 		}
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: socIcons;
+            justify-self: end;
+        }
 	}
 
 	&__adres {
@@ -58,12 +101,19 @@
 		font-weight: 400;
 		line-height: 18px;
 		letter-spacing: -2%;
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: adres;
+            align-self: and;
+        }
 	}
 
 	&__map {
 		min-height: 120px;
 		width: 100%;
 		border-radius: 10px;
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: map;
+        }
 	}
 
 	&__footer {
@@ -74,6 +124,8 @@
 		line-height: 18px;
 		letter-spacing: 0%;
 		text-align: center;
+        @media screen and (min-width: $mobile_footer_width) {
+            grid-area: footer;
+        }
 	}
-
 }
