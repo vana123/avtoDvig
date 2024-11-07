@@ -5,6 +5,9 @@
   background-position: center;
   display: block;
 }
+.icon__white {
+  filter: invert(100%) sepia(0%) saturate(7456%) hue-rotate(63deg) brightness(97%) contrast(98%);
+}
 .icon__like {
   background-image: url(../images/icons/like.svg);
 }
@@ -49,4 +52,13 @@
 }
 .icon__menu {
   background-image: url(../images/icons/menu.svg);
+}
+.icon__phone {
+  background-image: url(../images/icons/phone.svg);
+}
+.icon__telegram {
+  background-image: url(../images/icons/brand-telegram.svg);
+}
+.icon__arrow-up {
+  background-image: url(../images/icons/arrow-up.svg);
 }

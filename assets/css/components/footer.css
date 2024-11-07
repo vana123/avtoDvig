@@ -1,0 +1,124 @@
+.footer {
+  width: 100%;
+  background-color: #191919;
+  color: #f5f5f5;
+  padding: 19px 0;
+  margin-top: 35px;
+  border-radius: 35px 35px 0px 0px;
+}
+.footer__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .footer__content {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "title title phones" "logo adres socIcons" "map map map" "footer footer footer";
+    align-items: end;
+  }
+}
+.footer__title {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 768px) {
+  .footer__title {
+    grid-area: title;
+    align-self: start;
+  }
+}
+.footer__logo {
+  width: 230px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    grid-area: logo;
+  }
+}
+.footer__phones {
+  columns: 2;
+}
+@media screen and (min-width: 768px) {
+  .footer__phones {
+    grid-area: phones;
+  }
+}
+.footer__phone {
+  display: flex;
+  width: fit-content;
+  color: #f5f5f5;
+  border: 0.5px solid rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 28px;
+  border-radius: 20px;
+  padding: 4.5px 15px;
+  white-space: nowrap;
+  margin-bottom: 15px;
+}
+.footer__up {
+  display: flex;
+  width: fit-content;
+  color: #191919;
+  background-color: #f5f5f5;
+  border: 0.5px solid rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 28px;
+  border-radius: 20px;
+  padding: 4.5px 15px;
+}
+.footer__socIcons {
+  display: flex;
+}
+.footer__socIcons span {
+  width: 31px;
+  margin: 0 10px;
+}
+@media screen and (min-width: 768px) {
+  .footer__socIcons {
+    grid-area: socIcons;
+    justify-self: end;
+  }
+}
+.footer__adres {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -2%;
+}
+@media screen and (min-width: 768px) {
+  .footer__adres {
+    grid-area: adres;
+    align-self: and;
+  }
+}
+.footer__map {
+  min-height: 120px;
+  width: 100%;
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .footer__map {
+    grid-area: map;
+  }
+}
+.footer__footer {
+  color: rgb(153, 153, 153);
+  font-family: e-Ukraine;
+  font-size: 10px;
+  font-weight: 100;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__footer {
+    grid-area: footer;
+  }
+}
