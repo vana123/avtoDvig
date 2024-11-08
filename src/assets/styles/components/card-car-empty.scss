@@ -1,0 +1,42 @@
+@import "../variables.scss";
+
+.card-car-empty {
+	display: flex;
+	flex-direction: column;
+	padding: 115px 25px;
+    border: 0.13rem solid rgb(255, 255, 255);
+    border-radius: 2.19rem;
+    box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+    background: rgb(238, 241, 246);
+	border-radius: 2.19rem;
+	gap: 17px;
+	max-width: 400px;
+	justify-self: center;
+	align-items: center;
+	justify-content: space-between;
+
+	&__title {
+		font-size: 1.75rem;
+		font-weight: 500;
+		line-height: 2rem;
+		letter-spacing: 0%;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 1.25rem;
+		font-weight: 400;
+		line-height: 1.5rem;
+		letter-spacing: 0%;
+		text-align: center;
+		margin: 30px 0;
+	}
+	&__btn {
+		display: flex;
+		border: 0.06rem solid rgb(25, 25, 25);
+		border-radius: 3.13rem;
+		align-items: center;
+		justify-content: center;
+		padding: 11px 0;
+	}
+}

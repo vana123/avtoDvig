@@ -2,7 +2,7 @@
 
 .baner {
 	z-index: 0;
-	height: 90vh;
+	min-height: 90vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -15,6 +15,9 @@
 		align-items: center;
 		justify-content: space-between;
 		width: $container-width;
+		@media screen and (max-width: 1300px) {
+			flex-direction: column;
+		}
 	}
 
 	&__info {
