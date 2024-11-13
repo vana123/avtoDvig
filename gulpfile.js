@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const replace = require('gulp-replace');
 const ghPages = require('gulp-gh-pages');
+const concat = require('gulp-concat');
 
 // Шляхи до файлів
 const paths = {
@@ -50,6 +51,7 @@ function styles() {
   return gulp
     .src(paths.styles.src)
     .pipe(sass().on('error', sass.logError))
+    .pipe(concat('main.css'))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
