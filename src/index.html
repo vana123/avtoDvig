@@ -10,10 +10,30 @@
 		@@include('components/header.html')
 		<content>
 			@@include('components/mobile-menu.html')
-			@@include('./components/section-baner.html')
+			@@include('components/section-baner.html')
 			<section class="sectionGeneral">
 				<div class="container">
 					<h2 class="sectionGeneral__title">КАТАЛОГ АВТО</h2>
+					<div class="filterBar">
+						<div class="filterBar__btns">
+							<button class="filterBar__btn">В наявності</button>
+							<button class="filterBar__btn">Електромобілі</button>
+							<button class="filterBar__btn">Вантажні</button>
+							<button class="filterBar__btn">Продані</button>
+							<button class="filterBar__btn filterBar__btn-select">
+								Всі авто
+							</button>
+						</div>
+						<div class="filterBar__btns">
+							<button class="filterBar__btn filterBar__btn-icon"> <span class="icon icon__adjustments-horizontal"></span></button>
+							<select class="filterBar__select" name="sort" id="test id">
+								<option value="0" selected>Сортувати</option>
+								<option value="1">option 1</option>
+								<option value="2">option 2</option>
+								<option value="3">option 3</option>
+							</select>
+						</div>
+					</div>
 					<div class="sectionGeneral__grid">
 						@@include('./components/card-car.html')
 						@@include('./components/card-car.html')
@@ -27,16 +47,20 @@
 					</button>
 				</div>
 			</section>
-			<section  class="sectionGeneral-contrast">
+			<section class="sectionGeneral-contrast">
 				<div class="container">
 					<h2 class="sectionGeneral-contrast__title">послуги</h2>
 					<div class="sectionGeneral__grid">
-						@@include('./components/service-card.html', {"title": "Авто під замовлення", "icon": "car"})
+						@@include('./components/service-card.html', {"title": "Авто під	замовлення", "icon": "car"})
 						@@include('./components/service-card.html', {"title": "Авто з аукціону", "icon": "gavel"})
 						@@include('./components/service-card.html', {"title": "Лізинг авто", "icon": "report-money"})
 						@@include('./components/service-card.html', {"title": "Брокерські послуги", "icon": "shield-lock"})
 					</div>
-					<button class="btn-outlined btn-outlined-contrast sectionGeneral__midleBtn">ПЕРЕГЛЯНУТИ БІЛЬШЕ</button>
+					<button
+						class="btn-outlined btn-outlined-contrast sectionGeneral__midleBtn"
+					>
+						ПЕРЕГЛЯНУТИ БІЛЬШЕ
+					</button>
 				</div>
 			</section>
 		</content>

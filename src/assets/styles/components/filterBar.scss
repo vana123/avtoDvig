@@ -1,0 +1,68 @@
+@import "../variables.scss";
+
+.filterBar {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	margin: 21px 0;
+	gap: 15px;
+
+	&__btns {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 15px;
+	}
+	&__btn {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 10;
+		border-radius: 3.13rem;
+		background: rgb(255, 255, 255);
+		border: none;
+		cursor: pointer;
+		padding: 10px 38px;
+		min-height: 40px;
+		white-space: nowrap;
+
+		&-select {
+			box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+			color: $background-color;
+			background: $text-color;
+		}
+
+		&-icon {
+			padding: 10px 10px;
+			width: 44px;
+		}
+	}
+
+	&__select {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 10;
+		border-radius: 3.13rem;
+		background: rgb(255, 255, 255);
+		border: none;
+		cursor: pointer;
+		padding: 10px 38px;
+		min-height: 40px;
+		white-space: nowrap;
+
+		-moz-appearance: none; /* Firefox */
+		-webkit-appearance: none; /* Safari and Chrome */
+		appearance: none;
+
+		&::before {
+			content: url(../../images/icons/arrow-up.svg);
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
