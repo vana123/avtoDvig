@@ -7,8 +7,7 @@
 	background-color: #fff;
 	border-radius: 0rem 0rem 2.19rem 2.19rem;
 	width: 100%;
-
-	padding: 0.88rem 7.94rem 0.88rem 7.94rem;
+	padding: 4px 18px;
 
 	&__content {
 		display: flex;
@@ -16,11 +15,16 @@
 		align-items: center;
 		max-width: $container-width;
 		margin: 0 auto;
+		
 	}
 
 	&__logo {
 		img {
 			max-height: 50px;
+		}
+
+		@media (min-width: 768px) {
+			width: 100px;
 		}
 	}
 }

@@ -14,8 +14,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		width: $container-width;
-		@media screen and (max-width: 1300px) {
+		// width: $container-width;
+		@media screen and (max-width: $breakpoint-md) {
 			flex-direction: column;
 		}
 	}
@@ -48,5 +48,9 @@
 		z-index: -1000;
 		filter: brightness(50%);
         transform: scale(1.1, 1.1);
+
+		@media (max-width: $breakpoint-md) {
+			display: none;
+		  }
 	}
 }
