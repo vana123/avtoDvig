@@ -7,8 +7,9 @@
 	background-position: center;
 	display: block;
 
-	&__white{
-		filter: invert(100%) sepia(0%) saturate(7456%) hue-rotate(63deg) brightness(97%) contrast(98%);
+	&__white {
+		filter: invert(100%) sepia(0%) saturate(7456%) hue-rotate(63deg)
+			brightness(97%) contrast(98%);
 	}
 
 	&__like {
@@ -23,59 +24,70 @@
 	&__calendar-month {
 		background-image: url(../images/icons/calendar-month.svg);
 	}
-	&__dashboard{
+	&__dashboard {
 		background-image: url(../images/icons/dashboard.svg);
 	}
-	&__gas-station{
+	&__gas-station {
 		background-image: url(../images/icons/gas-station.svg);
 	}
-	&__droplet{
+	&__droplet {
 		background-image: url(../images/icons/droplet.svg);
 	}
-	&__bolt{
+	&__bolt {
 		background-image: url(../images/icons/bolt.svg);
 	}
-	&__car-turbine{
+	&__car-turbine {
 		background-image: url(../images/icons/car-turbine.svg);
 	}
-	&__automatic-gearbox{
+	&__automatic-gearbox {
 		background-image: url(../images/icons/automatic-gearbox.svg);
 	}
-	&__car{
+	&__car {
 		background-image: url(../images/icons/car.svg);
 	}
-	&__gavel{
+	&__gavel {
 		background-image: url(../images/icons/gavel.svg);
 	}
-	&__report-money{
+	&__report-money {
 		background-image: url(../images/icons/report-money.svg);
 	}
-	&__shield-lock{
+	&__shield-lock {
 		background-image: url(../images/icons/shield-lock.svg);
 	}
-	&__menu{
+	&__menu {
 		background-image: url(../images/icons/menu.svg);
 	}
-	&__phone{
+	&__phone {
 		background-image: url(../images/icons/phone.svg);
 	}
-	&__telegram{
+	&__telegram {
 		background-image: url(../images/icons/brand-telegram.svg);
 	}
-	&__arrow-up{
+	&__arrow-up {
 		background-image: url(../images/icons/arrow-up.svg);
 	}
-	&__adjustments-horizontal{
+	&__adjustments-horizontal {
 		background-image: url(../images/icons/adjustments-horizontal.svg);
 	}
-	&__youtube{
+	.icon__youtube {
 		background-image: url(../images/icons/brand-youtube.svg);
 	}
-	&__cash{
+	.icon__instagram {
+		background-image: url(../images/icons/brand-instagram.svg);
+	}
+	.icon__tiktok {
+		background-image: url(../images/icons/brand-tiktok.svg);
+	}
+	.icon__whatsapp {
+		background-image: url(../images/icons/brand-whatsapp.svg);
+	}
+	.icon__arrow-up {
+		background-image: url(../images/icons/arrow-up.svg);
+	}
+	&__cash {
 		background-image: url(../images/icons/cash.svg);
 	}
-	&__copy{
+	&__copy {
 		background-image: url(../images/icons/copy.svg);
 	}
-
 }

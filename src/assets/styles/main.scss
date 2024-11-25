@@ -17,6 +17,7 @@
 @import './components/promo-baner.scss';
 @import './components/advantag.scss';
 @import './components/product.scss';
+@import './components/contact-form.scss';
 
 
 @import './components/section-baner.scss';
@@ -46,4 +47,9 @@ body{
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
+}
+
+
+.hidden{
+  display: none;
 }
