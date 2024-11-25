@@ -604,6 +604,10 @@ h6 {
   padding: 11px 0;
 }
 
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 .services__card {
   display: flex;
   flex-direction: column;
@@ -2225,6 +2229,10 @@ h6 {
 }
 .sectionGeneral-contrast__title {
   text-align: center;
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .services__card {
   display: flex;
