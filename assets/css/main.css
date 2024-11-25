@@ -65,8 +65,20 @@
 .icon__adjustments-horizontal {
   background-image: url(../images/icons/adjustments-horizontal.svg);
 }
-.icon__youtube {
+.icon .icon__youtube {
   background-image: url(../images/icons/brand-youtube.svg);
+}
+.icon .icon__instagram {
+  background-image: url(../images/icons/brand-instagram.svg);
+}
+.icon .icon__tiktok {
+  background-image: url(../images/icons/brand-tiktok.svg);
+}
+.icon .icon__whatsapp {
+  background-image: url(../images/icons/brand-whatsapp.svg);
+}
+.icon .icon__arrow-up {
+  background-image: url(../images/icons/arrow-up.svg);
 }
 .icon__cash {
   background-image: url(../images/icons/cash.svg);
@@ -74,6 +86,7 @@
 .icon__copy {
   background-image: url(../images/icons/copy.svg);
 }
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -91,7 +104,7 @@ h2,
 h3,
 h4,
 p,
-ul[class],
+ul,
 ol[class],
 li,
 figure,
@@ -287,8 +300,20 @@ h6 {
 .icon__adjustments-horizontal {
   background-image: url(../images/icons/adjustments-horizontal.svg);
 }
-.icon__youtube {
+.icon .icon__youtube {
   background-image: url(../images/icons/brand-youtube.svg);
+}
+.icon .icon__instagram {
+  background-image: url(../images/icons/brand-instagram.svg);
+}
+.icon .icon__tiktok {
+  background-image: url(../images/icons/brand-tiktok.svg);
+}
+.icon .icon__whatsapp {
+  background-image: url(../images/icons/brand-whatsapp.svg);
+}
+.icon .icon__arrow-up {
+  background-image: url(../images/icons/arrow-up.svg);
 }
 .icon__cash {
   background-image: url(../images/icons/cash.svg);
@@ -299,7 +324,6 @@ h6 {
 
 .header {
   z-index: 1000;
-  position: absolute;
   background-color: #fff;
   border-radius: 0rem 0rem 2.19rem 2.19rem;
   width: 100%;
@@ -768,7 +792,7 @@ h6 {
   font-size: 28px;
   font-weight: 500;
   line-height: 32px;
-  color: #E30613;
+  color: #e30613;
 }
 .product__prices-old {
   font-size: 16px;
@@ -785,7 +809,7 @@ h6 {
   background: rgb(236, 255, 233);
   font-size: 10px;
   font-weight: 400;
-  color: #4EA525;
+  color: #4ea525;
 }
 .product__btn {
   display: flex;
@@ -863,6 +887,114 @@ h6 {
   background: rgb(243, 246, 251);
   border: none;
   padding: 8px 30px;
+}
+.product__tabs {
+  margin: 45px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .product__tabs {
+    grid-template-columns: 1fr;
+  }
+}
+.product__tabs li {
+  display: block;
+  border-radius: 3.13rem;
+  /* #191919 */
+  padding: 14px 10px;
+  cursor: pointer;
+  font-size: 0.81rem;
+  font-weight: 500;
+  line-height: 1.13rem;
+  text-align: center;
+}
+.product__tabs #complect {
+  color: rgb(255, 255, 255);
+  background: rgb(25, 25, 25);
+}
+.product__tabs #description {
+  background: rgb(255, 255, 255);
+}
+.product__tabs #credit {
+  border: 0.06rem solid rgb(78, 165, 37);
+  border-radius: 3.13rem;
+  /* #FFFFFF */
+  background: rgb(255, 255, 255);
+}
+.product__tab {
+  border-radius: 2.19rem;
+  box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+  background: rgb(255, 255, 255);
+  padding: 35px;
+}
+.product__tab-complect ul {
+  column-count: 3; /* Ділимо список на 3 колонки */
+  column-gap: 20px;
+}
+
+.contact-form {
+  background-color: #E30613;
+  color: #f5f5f5;
+  padding: 45px 0;
+  margin: 45px 30px;
+  text-align: center;
+  border-radius: 1.25rem;
+}
+.contact-form__title {
+  font-size: 2.38rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  margin-bottom: 10px;
+}
+.contact-form__subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.contact-form__subtitle__note {
+  font-size: 1.13rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  display: block;
+  margin-top: 10px;
+}
+.contact-form__fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+}
+.contact-form__fields .contact-form__input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 3.13rem;
+  border: none;
+  height: 35px;
+  padding: 20px 17px;
+  color: #fff;
+  outline: none;
+  margin: 5px;
+}
+.contact-form__fields .contact-form__input::placeholder {
+  color: #999999;
+}
+.contact-form__fields .contact-form__button {
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3.13rem;
+  /* #191919 */
+  background: rgb(25, 25, 25);
+  font-size: 16px;
+  cursor: pointer;
+}
+.contact-form__fields .contact-form__button:hover {
+  background-color: #444444;
 }
 
 .baner {
@@ -1107,6 +1239,10 @@ body {
     max-width: 1320px;
   }
 }
+
+.hidden {
+  display: none;
+}
 *,
 *::before,
 *::after {
@@ -1124,7 +1260,7 @@ h2,
 h3,
 h4,
 p,
-ul[class],
+ul,
 ol[class],
 li,
 figure,
@@ -1415,6 +1551,68 @@ h6 {
 .card-car__img {
   border-radius: 1.25rem;
 }
+.contact-form {
+  background-color: #E30613;
+  color: #f5f5f5;
+  padding: 45px 0;
+  margin: 45px 30px;
+  text-align: center;
+  border-radius: 1.25rem;
+}
+.contact-form__title {
+  font-size: 2.38rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  margin-bottom: 10px;
+}
+.contact-form__subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.contact-form__subtitle__note {
+  font-size: 1.13rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  display: block;
+  margin-top: 10px;
+}
+.contact-form__fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+}
+.contact-form__fields .contact-form__input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 3.13rem;
+  border: none;
+  height: 35px;
+  padding: 20px 17px;
+  color: #fff;
+  outline: none;
+  margin: 5px;
+}
+.contact-form__fields .contact-form__input::placeholder {
+  color: #999999;
+}
+.contact-form__fields .contact-form__button {
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3.13rem;
+  /* #191919 */
+  background: rgb(25, 25, 25);
+  font-size: 16px;
+  cursor: pointer;
+}
+.contact-form__fields .contact-form__button:hover {
+  background-color: #444444;
+}
 .filterBar {
   width: 100%;
   display: flex;
@@ -1691,7 +1889,6 @@ h6 {
 }
 .header {
   z-index: 1000;
-  position: absolute;
   background-color: #fff;
   border-radius: 0rem 0rem 2.19rem 2.19rem;
   width: 100%;
@@ -1731,6 +1928,7 @@ h6 {
 .mobileMenu:target {
   transform: translateX(-350px);
 }
+@charset "UTF-8";
 .product__wraper {
   display: flex;
   gap: 43px;
@@ -1780,7 +1978,7 @@ h6 {
   font-size: 28px;
   font-weight: 500;
   line-height: 32px;
-  color: #E30613;
+  color: #e30613;
 }
 .product__prices-old {
   font-size: 16px;
@@ -1797,7 +1995,7 @@ h6 {
   background: rgb(236, 255, 233);
   font-size: 10px;
   font-weight: 400;
-  color: #4EA525;
+  color: #4ea525;
 }
 .product__btn {
   display: flex;
@@ -1875,6 +2073,51 @@ h6 {
   background: rgb(243, 246, 251);
   border: none;
   padding: 8px 30px;
+}
+.product__tabs {
+  margin: 45px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .product__tabs {
+    grid-template-columns: 1fr;
+  }
+}
+.product__tabs li {
+  display: block;
+  border-radius: 3.13rem;
+  /* #191919 */
+  padding: 14px 10px;
+  cursor: pointer;
+  font-size: 0.81rem;
+  font-weight: 500;
+  line-height: 1.13rem;
+  text-align: center;
+}
+.product__tabs #complect {
+  color: rgb(255, 255, 255);
+  background: rgb(25, 25, 25);
+}
+.product__tabs #description {
+  background: rgb(255, 255, 255);
+}
+.product__tabs #credit {
+  border: 0.06rem solid rgb(78, 165, 37);
+  border-radius: 3.13rem;
+  /* #FFFFFF */
+  background: rgb(255, 255, 255);
+}
+.product__tab {
+  border-radius: 2.19rem;
+  box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+  background: rgb(255, 255, 255);
+  padding: 35px;
+}
+.product__tab-complect ul {
+  column-count: 3; /* Ділимо список на 3 колонки */
+  column-gap: 20px;
 }
 .promo-banner {
   background-color: black;
