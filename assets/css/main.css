@@ -59,25 +59,25 @@
 .icon__telegram {
   background-image: url(../images/icons/brand-telegram.svg);
 }
-.icon__arrow-up {
-  background-image: url(../images/icons/arrow-up.svg);
-}
 .icon__adjustments-horizontal {
   background-image: url(../images/icons/adjustments-horizontal.svg);
 }
-.icon .icon__youtube {
+.icon__youtube {
   background-image: url(../images/icons/brand-youtube.svg);
 }
-.icon .icon__instagram {
+.icon__instagram {
   background-image: url(../images/icons/brand-instagram.svg);
 }
-.icon .icon__tiktok {
+.icon__tiktok {
   background-image: url(../images/icons/brand-tiktok.svg);
 }
-.icon .icon__whatsapp {
+.icon__whatsapp {
   background-image: url(../images/icons/brand-whatsapp.svg);
 }
-.icon .icon__arrow-up {
+.icon__360-number {
+  background-image: url(../images/icons/360-number.svg);
+}
+.icon__arrow-up {
   background-image: url(../images/icons/arrow-up.svg);
 }
 .icon__cash {
@@ -85,6 +85,18 @@
 }
 .icon__copy {
   background-image: url(../images/icons/copy.svg);
+}
+.icon__building-bank {
+  background-image: url(../images/icons/building-bank.svg);
+}
+.icon__currency-bitcoin {
+  background-image: url(../images/icons/currency-bitcoin.svg);
+}
+.icon__car-4wd {
+  background-image: url(../images/icons/car-4wd.svg);
+}
+.icon__battery-vertical {
+  background-image: url(../images/icons/battery-vertical.svg);
 }
 
 /* Заголовок форми */
@@ -108,6 +120,10 @@
 /* banner video */
 
 /* banner form */
+
+/* Базове мобільне меню */
+
+/* dropdown menu */
 
 /* Адаптивність для маленьких екранів */
 
@@ -489,6 +505,141 @@ textarea {
   font-size: 0.9em;
   margin-top: 5px;
   display: block;
+}
+/* Базове мобільне меню */
+.header {
+  position: relative;
+}
+
+.header__nav-list {
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenuIcons {
+  display: block;
+  width: 60px;
+}
+
+.mobileMenuIcons a {
+  display: inline-block;
+}
+
+.mobileMenuToggle {
+  display: none;
+}
+
+/* dropdown menu */
+.header__nav-item {
+  position: relative;
+  margin-right: 20px;
+}
+
+.header__nav-dropdown:hover .header__dropdown-menu {
+  display: block;
+}
+
+.header__dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.header__dropdown-item {
+  margin: 0;
+  padding: 1em;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header__dropdown-link {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+.header__dropdown-link:hover {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 768px) {
+  nav.header__nav a {
+    font-size: 20px;
+    display: inline-block;
+  }
+  nav.header__nav .header__dropdown-link {
+    white-space: pre-line;
+  }
+  .header__nav-list {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-100%); /* Сховано поза екраном */
+    z-index: 1000;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+  .header__nav-list.active {
+    transform: translateX(0); /* Показує меню */
+  }
+  .mobileMenuToggle {
+    display: inline-block;
+  }
+  .mobileMenuIcons {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 1050;
+    width: 80px;
+  }
+  /* Прибираємо hover для мобільних */
+  .header__dropdown-menu {
+    display: block;
+  }
+  /* Робимо вкладене меню видимим при активному стані */
+  .header__nav-dropdown.active .header__dropdown-menu {
+    display: block;
+  }
+  /* Робимо вкладене меню статичним */
+  .header__dropdown-menu {
+    position: static;
+    box-shadow: none; /* Прибираємо тінь */
+    padding: 0; /* Прибираємо зайві відступи */
+    background-color: transparent;
+  }
+  .header__dropdown-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  .header__dropdown-link {
+    padding: 10px 15px;
+  }
+}
+img.emoji {
+  width: 18px;
+  display: inline-block;
+}
+
+.card-car .image {
+  display: flex;
+  align-items: center;
+}
+
+img.no-image {
+  filter: grayscale(100%) brightness(3);
+  padding: 5%;
 }
 .btn {
   cursor: pointer;
@@ -1672,6 +1823,19 @@ img.google {
   font-weight: 500;
   line-height: 32px;
 }
+.product__status {
+  border-radius: 3.13rem;
+  font-size: 0.81rem;
+  font-weight: 400;
+  line-height: 1.13rem;
+  text-transform: uppercase;
+  padding: 8px 22px;
+  width: fit-content;
+}
+.product__status-inStock {
+  background: rgb(236, 255, 233);
+  color: rgb(78, 165, 37);
+}
 .product__prices {
   display: flex;
   gap: 12px;
@@ -1695,10 +1859,27 @@ img.google {
   padding: 8px;
   gap: 5px;
   border-radius: 7px;
-  background: rgb(236, 255, 233);
   font-size: 10px;
   font-weight: 400;
+}
+.product #cash {
+  background: rgb(236, 255, 233);
   color: #4ea525;
+}
+.product #cash span {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(89%) saturate(415%) hue-rotate(56deg) brightness(99%) contrast(87%);
+}
+.product #building-bank {
+  background: rgb(247, 244, 252);
+}
+.product #building-bank span {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(62%) saturate(4884%) hue-rotate(238deg) brightness(92%) contrast(85%);
+}
+.product #currency-bitcoin {
+  background: rgb(252, 249, 197);
+}
+.product #currency-bitcoin span {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(50%) saturate(348%) hue-rotate(350deg) brightness(95%) contrast(86%);
 }
 .product__btn {
   display: flex;
