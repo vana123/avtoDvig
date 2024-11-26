@@ -1,87 +1,94 @@
 <!DOCTYPE html>
 <html lang="uk">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Головна сторінка</title>
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-		@@include('components/promo-baner.html')
-		@@include('components/header.html')
-		<content>
-			@@include('components/mobile-menu.html')
-			@@include('components/section-baner.html')
-			<section class="sectionGeneral">
-				<div class="container">
-					<h2 class="sectionGeneral__title">КАТАЛОГ АВТО</h2>
-					<div class="filterBar">
-						<div class="filterBar__btns">
-							<button class="filterBar__btn">В наявності</button>
-							<button class="filterBar__btn">Електромобілі</button>
-							<button class="filterBar__btn">Вантажні</button>
-							<button class="filterBar__btn">Продані</button>
-							<button class="filterBar__btn filterBar__btn-select">
-								Всі авто
-							</button>
-						</div>
-						<div class="filterBar__btns">
-							<button class="filterBar__btn filterBar__btn-icon"> <span class="icon icon__adjustments-horizontal"></span></button>
-							<select class="filterBar__select" name="sort" id="test id">
-								<option value="0" selected>Сортувати</option>
-								<option value="1">option 1</option>
-								<option value="2">option 2</option>
-								<option value="3">option 3</option>
-							</select>
-						</div>
-					</div>
-					<div class="sectionGeneral__grid">
-						@@include('./components/card-car.html')
-						@@include('./components/card-car.html')
-						@@include('./components/card-car.html')
-						@@include('./components/card-car.html')
-						@@include('./components/card-car.html')
-						@@include('./components/card-car-empty.html')
-					</div>
-					<button class="btn-outlined sectionGeneral__midleBtn">
-						ПЕРЕГЛЯНУТИ БІЛЬШЕ
-					</button>
-				</div>
-			</section>
-			<section class="sectionGeneral-contrast">
-				<div class="container">
-					<h2 class="sectionGeneral-contrast__title">послуги</h2>
-					<div class="services__grid">
-						@@include('./components/service-card.html', {"title": "Авто під	замовлення", "icon": "car"})
-						@@include('./components/service-card.html', {"title": "Авто з аукціону", "icon": "gavel"})
-						@@include('./components/service-card.html', {"title": "Лізинг авто", "icon": "report-money"})
-						@@include('./components/service-card.html', {"title": "Брокерські послуги", "icon": "shield-lock"})
-					</div>
-					<button
-						class="btn-outlined btn-outlined-contrast sectionGeneral__midleBtn"
-					>
-						ПЕРЕГЛЯНУТИ БІЛЬШЕ
-					</button>
-				</div>
-			</section>
-			<section class="sectionGeneral">
-				<div class="container">
-					<h2 class="sectionGeneral__title">Переваги</h2>
-					<div class="sectionGeneral__grid">
-						@@include('./components/advantages.html')
-						@@include('./components/advantages.html')
-						@@include('./components/advantages.html')
-						@@include('./components/advantages.html')
-						@@include('./components/advantages.html')
-						@@include('./components/advantages.html')
-					</div>
-				</div>
-			</section>
-			<!-- product page -->
-			@@include('./components/product.html')
-			@@include('./components/contact-form.html')
 
-		</content>
-		@@include('components/footer.html')
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Головна сторінка</title>
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+	@@include('components/promo-baner.html')
+	@@include('components/header.html')
+	<content>
+		@@include('components/mobile-menu.html')
+		@@include('components/section-baner.html')
+		<section class="sectionGeneral">
+			<div class="container">
+				<h2 class="sectionGeneral__title">КАТАЛОГ АВТО</h2>
+				<div class="filterBar">
+					<div class="filterBar__btns">
+						<button class="filterBar__btn">В наявності</button>
+						<button class="filterBar__btn">Електромобілі</button>
+						<button class="filterBar__btn">Вантажні</button>
+						<button class="filterBar__btn">Продані</button>
+						<button class="filterBar__btn filterBar__btn-select">
+							Всі авто
+						</button>
+					</div>
+					<div class="filterBar__btns">
+						<button class="filterBar__btn filterBar__btn-icon"> <span
+								class="icon icon__adjustments-horizontal"></span></button>
+						<select class="filterBar__select" name="sort" id="test id">
+							<option value="0" selected>Сортувати</option>
+							<option value="1">option 1</option>
+							<option value="2">option 2</option>
+							<option value="3">option 3</option>
+						</select>
+					</div>
+				</div>
+				<div class="sectionGeneral__grid">
+					@@include('./components/card-car.html')
+					@@include('./components/card-car.html')
+					@@include('./components/card-car.html')
+					@@include('./components/card-car.html')
+					@@include('./components/card-car.html')
+					@@include('./components/card-car-empty.html')
+				</div>
+				<button class="btn-outlined sectionGeneral__midleBtn">
+					ПЕРЕГЛЯНУТИ БІЛЬШЕ
+				</button>
+			</div>
+		</section>
+		<section class="sectionGeneral-contrast">
+			<div class="container">
+				<h2 class="sectionGeneral-contrast__title">послуги</h2>
+				<div class="services__grid">
+					@@include('./components/service-card.html', {"title": "Авто під замовлення", "icon": "car"})
+					@@include('./components/service-card.html', {"title": "Авто з аукціону", "icon": "gavel"})
+					@@include('./components/service-card.html', {"title": "Лізинг авто", "icon": "report-money"})
+					@@include('./components/service-card.html', {"title": "Брокерські послуги", "icon": "shield-lock"})
+				</div>
+				<button class="btn-outlined btn-outlined-contrast sectionGeneral__midleBtn">
+					ПЕРЕГЛЯНУТИ БІЛЬШЕ
+				</button>
+			</div>
+		</section>
+		<section class="sectionGeneral">
+			<div class="container">
+				<h2 class="sectionGeneral__title">Переваги</h2>
+				<div class="sectionGeneral__grid">
+					@@include('./components/advantages.html')
+					@@include('./components/advantages.html')
+					@@include('./components/advantages.html')
+					@@include('./components/advantages.html')
+					@@include('./components/advantages.html')
+					@@include('./components/advantages.html')
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				@@include('./components/guestions.html')
+			</div>
+		</section>
+		<!-- product page -->
+		@@include('./components/product.html')
+		@@include('./components/contact-form.html')
+
+	</content>
+	@@include('components/footer.html')
+</body>
+
 </html>
