@@ -1,0 +1,279 @@
+﻿.star-rating {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5em; /* Розмір зірок */
+    color: #ccc; /* Колір незаповнених зірок */
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.star-rating .stars-back {
+    color: #ccc; /* Колір незаповнених зірок */
+}
+
+.star-rating .stars-front {
+    color: #ffa500; /* Колір заповнених зірок */
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0; /* Початкова ширина */
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.business-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+.business-widget span{
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .business-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .business-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .swiper-button-prev {
+        left: 10px;
+    }
+    .swiper-button-next {
+        right: 10px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .business-widget {
+        margin-bottom: 20px;
+    }
+}
+
+/* Стиль для бізнес-інформації */
+.business-widget {
+    text-align: center;
+    width: 200px;
+    margin: 0 20px;
+}
+
+.business-photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+.business-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333;
+}
+.business-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    color: #ffa500;
+    margin: 5px 0;
+}
+.rating-value {
+    font-size: 1.5em;
+    color: #ffa500;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.stars {
+    color: #ffa500;
+}
+.powered-by {
+    margin: 0 5px;
+    font-size: 0.8em;
+    color: #888;
+}
+.google-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+img.google {
+    display: inline-block;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 50%;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.review-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+    white-space: nowrap;
+}
+
+.review-button:hover {
+    background: #1f67e7;
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 3px 5px rgba(0,0,0,.24) !important;
+}
+
+/* Стиль для слайдера відгуків */
+.swiper-wrapper-container {
+    position: relative;
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 0 40px;
+    height: 254px;
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 35px;
+}
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.profile-photo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.review-info h3 {
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    font-size: 75%;
+    font-weight: bold;
+}
+
+.review-info h3 a{
+    color: #154fc1 !important;
+}
+
+
+.review-info span {
+    font-size: 0.9em;
+    color: #888;
+}
+.rating {
+    color: #ffa500;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+.review-text {
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0;
+    height: 100px;
+    overflow-y: auto;
+}
+.review-text::-webkit-scrollbar {
+    width: 6px; /* Ширина смуги прокрутки */
+}
+
+.review-text::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Колір фону для доріжки прокрутки */
+    border-radius: 10px;
+}
+
+.review-text::-webkit-scrollbar-thumb {
+    background: #888; /* Колір смуги прокрутки */
+    border-radius: 10px;
+}
+
+.review-text::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #0073e6;
+    width: 30px;
+    height: 30px;
+    top: 140px;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 10;
+}
+
+.swiper-button-prev {
+    left: 15px;
+    background-size: 20px 20px;
+}
+
+.swiper-button-next {
+    right: 15px;
+    background-size: 20px 20px;
+}
+
+.swiper-pagination {
+    position: relative;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #0073e6;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}

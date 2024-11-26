@@ -1,0 +1,107 @@
+﻿/* Загальний стиль форми */
+form.order-car {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Заголовок форми */
+form.order-car h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стиль для кожного поля форми */
+form.order-car label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form.order-car input[type="text"],
+form.order-car input[type="tel"],
+form.order-car input[type="number"],
+form.order-car input[type="file"],
+form.order-car textarea,
+form.order-car select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Стиль для груп полів (fieldset) */
+fieldset {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+legend {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Стиль для радіо-кнопок і чекбоксів */
+form.order-car input[type="radio"],
+form.order-car input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Відступи між елементами радіо-кнопок і чекбоксів */
+.wpcf7-list-item {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Стиль для кнопки відправки */
+form.order-car button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form.order-car button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Стиль для повідомлень про помилки */
+form.order-car .error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Підказки для полів */
+form.order-car input::placeholder,
+form.order-car textarea::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Стили для текстової області (textarea) */
+form.order-car textarea {
+    resize: vertical;
+    min-height: 100px;
+}

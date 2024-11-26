@@ -1,0 +1,61 @@
+﻿.button {
+    outline: none;
+    cursor: pointer;
+    transition: outline-color 0.3s ease;
+}
+
+.button.active {
+    outline: 2px solid red;
+}
+
+#panorama {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #000;
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    aspect-ratio: 2 / 1;
+}
+
+/* Адаптивність для маленьких екранів */
+@media screen and (max-width: 640px) {
+    #panorama {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    #panorama {
+        width: 90%;
+        height: auto;
+    }
+}
+
+#panorama.visible {
+    display: block;
+    border-radius: 4px;
+}
+.messenger-widget.hidden {
+    display: none;
+}
+.messenger-options {
+    display: flex;
+    gap: 10px;
+}
+.messenger-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}

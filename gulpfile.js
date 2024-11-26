@@ -5,6 +5,8 @@ const browserSync = require('browser-sync').create();
 const replace = require('gulp-replace');
 const ghPages = require('gulp-gh-pages');
 const concat = require('gulp-concat');
+const postcss = require('gulp-postcss');
+const discardDuplicates = require('postcss-discard-duplicates');
 
 // Шляхи до файлів
 const paths = {
@@ -41,7 +43,7 @@ function html() {
         basepath: '@file'
       })
     )
-    .pipe(replace(/src=['"](?:\.{1,2}\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
+    .pipe(replace(/src=['"](?:\.\.\/)+assets\/images\/(.+\.(?:png|jpg|jpeg|gif|svg))['"]/g, 'src="assets/images/$1"'))
     .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.stream());
 }
@@ -52,6 +54,7 @@ function styles() {
     .src(paths.styles.src)
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
+    .pipe(postcss([discardDuplicates()]))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
@@ -105,7 +108,7 @@ function watchFiles() {
 
 // Завдання для розгортання на GitHub Pages
 function deploy() {
-  return gulp.src('./dist/**/*', { encoding: false })
+  return gulp.src('./dist/**/*', { allowEmpty: true, encoding: false })
     .pipe(ghPages());
 }
 
