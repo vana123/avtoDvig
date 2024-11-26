@@ -6,6 +6,7 @@
 			</div>
 			<div class="product__info">
 				<div class="product__header">
+					<div class="product__status product__status-inStock">В наявності</div>
 					<h1>Chevrolet SSR (Super Sport Roadster)</h1>
 					<div class="product__prices">
 						<span class="product__prices-now">31500$</span>
@@ -15,14 +16,16 @@
 						<p>Можливий розрахунок:</p>
 						<div class="product__pays">
 							<div class="" style="display: flex; flex-wrap: wrap; gap: 5px">
-								<div class="product__icon">
-									<span class="icon icon__cash"></span> <span>Готівкою</span>
+								<div class="product__icon" id="cash">
+									<span class="icon icon__cash"></span><span>Готівкою</span>
 								</div>
-								<div class="product__icon">
-									<span class="icon icon__cash"></span> <span>Готівкою</span>
+								<div class="product__icon" id="building-bank">
+									<span class="icon icon__building-bank"></span
+									><span>Безготівковий</span>
 								</div>
-								<div class="product__icon">
-									<span class="icon icon__cash"></span> <span>Готівкою</span>
+								<div class="product__icon" id="currency-bitcoin">
+									<span class="icon icon__currency-bitcoin"></span>
+									<span>Криптовалюта</span>
 								</div>
 							</div>
 						</div>
@@ -58,8 +61,16 @@
 						>автомат
 					</p>
 					<p>
-						<span class="icon card-car__body-icon icon__car-turbine"></span
+						<span class="icon card-car__body-icon icon__car-4wd"></span
 						>повний
+					</p>
+					<p>
+						<span class="icon card-car__body-icon icon__car"></span
+						>тип кузова
+					</p>
+					<p>
+						<span class="icon card-car__body-icon icon__battery-vertical"></span
+						>запас ходу
 					</p>
 				</div>
 				<div
@@ -72,7 +83,7 @@
 					"
 				>
 					<span class="icon icon__youtube"></span>
-					<span class="icon icon__cash"></span>
+					<span class="icon icon__360-number"></span>
 				</div>
 				<button class="product__btn-outlined">
 					wvwzzz3cme008033
