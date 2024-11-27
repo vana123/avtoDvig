@@ -1,33 +1,35 @@
-@import "../variables.scss";
+@import '../variables.scss';
 
 .filterBar {
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap; // Дозволяє перенесення елементів
 	justify-content: space-between;
-
-	margin: 21px 0;
-	gap: 15px;
+	align-items: center;
+	margin: clamp(10px, 3vw, 21px) 0;
+	gap: clamp(5px, 2vw, 15px); // Динамічний відступ між елементами
 
 	&__btns {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-content: flex-start;
-		gap: 15px;
+		flex-wrap: wrap; // Дозволяє переносити кнопки на новий рядок
+		justify-content: flex-start; // Вирівнювання по лівому краю
+		gap: clamp(5px, 1vw, 15px);
+		width: 100%; // Забезпечує використання всього доступного простору
 	}
-	&__btn {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		gap: 10;
+
+	&__btn,
+	&__select {
+		flex: 1 1 auto; // Гнучка ширина елемента
+		min-width: 120px; // Мінімальна ширина кнопки
+		max-width: 200px; // Максимальна ширина кнопки
+		padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 38px); // Адаптивні відступи
+		height: clamp(35px, 4vw, 40px); // Адаптивна висота
+		font-size: clamp(14px, 2vw, 16px); // Адаптивний розмір шрифту
 		border-radius: 3.13rem;
 		background: rgb(255, 255, 255);
 		border: none;
 		cursor: pointer;
-		padding: 10px 38px;
-		height: 40px;
-		white-space: nowrap;
+		white-space: nowrap; // Запобігає переносу тексту всередині кнопки
 
 		&-select {
 			box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
@@ -36,34 +38,32 @@
 		}
 
 		&-icon {
-			padding: 10px 10px;
-			width: 44px;
+			width: clamp(16px, 4vw, 24px); // Адаптивний розмір іконки
+			height: clamp(16px, 4vw, 24px);
 		}
 	}
+}
 
-	&__select {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		gap: 10;
-		border-radius: 3.13rem;
-		background: rgb(255, 255, 255);
-		border: none;
-		cursor: pointer;
-		padding: 10px 38px;
-		height: 40px;
-		white-space: nowrap;
+@media (max-width: 576px) {
+	.filterBar {
+		flex-direction: column; // Розташування елементів у стовпчик
+		align-items: stretch;
+		gap: 10px;
+	}
 
-		-moz-appearance: none; /* Firefox */
-		-webkit-appearance: none; /* Safari and Chrome */
-		appearance: none;
+	.filterBar__btns {
+		flex-direction: row; // Всі кнопки в один рядок
+		flex-wrap: nowrap; // Забороняє перенесення
+		overflow-x: auto; // Прокрутка, якщо кнопки не поміщаються
+		justify-content: flex-start;
+		width: 100%; // Заповнює всю ширину
+	}
 
-		&::before {
-			content: url(../../images/icons/arrow-up.svg);
-			display: inline-block;
-			width: 24px;
-			height: 24px;
-		}
+	.filterBar__btn,
+	.filterBar__select {
+		flex: 0 0 auto; // Фіксований розмір кнопок
+		min-width: 100px; // Мінімальна ширина для вузьких екранів
+		padding: 8px 15px; // Зменшені відступи
+		font-size: 12px; // Менший розмір шрифту
 	}
 }

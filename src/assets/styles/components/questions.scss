@@ -2,7 +2,7 @@
     border-radius: 20px;
     box-shadow: 0px 0px 6px 0px rgba(25, 25, 25, 0.25);
     background: rgb(255, 255, 255);
-    padding: 45px 70px;
+    padding: clamp(20px, 5vw, 45px) clamp(15px, 6vw, 70px);
 
     &__title {
         font-size: 38px;

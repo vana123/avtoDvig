@@ -6,6 +6,7 @@
 	background-size: cover;
 	background-position: center;
 	display: block;
+	cursor: pointer;
 
 	&__white {
 		filter: invert(100%) sepia(0%) saturate(7456%) hue-rotate(63deg)

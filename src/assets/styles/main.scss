@@ -38,11 +38,13 @@
 
 body{
     background-color: $background-color;
+    overflow-x: hidden;
 }
 
 .container{
     max-width: $container-width;
     margin: 0  auto;
+    padding: 5px;
 
     @media (min-width: 576px) {
         max-width: 540px;

@@ -3,14 +3,13 @@
 .card-car-empty {
 	display: flex;
 	flex-direction: column;
-	padding: 115px 25px;
-    border: 0.13rem solid rgb(255, 255, 255);
-    border-radius: 2.19rem;
-    box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
-    background: rgb(238, 241, 246);
+	padding: 115px 25px; // Базовий padding
+	border: 0.13rem solid rgb(255, 255, 255);
 	border-radius: 2.19rem;
-	gap: 17px;
-	max-width: 400px;
+	box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+	background: rgb(238, 241, 246);
+	gap: 17px; // Базовий gap
+	max-width: 400px; // Базовий розмір картки
 	justify-self: center;
 	align-items: center;
 	justify-content: space-between;
@@ -19,18 +18,18 @@
 		font-size: 1.75rem;
 		font-weight: 500;
 		line-height: 2rem;
-		letter-spacing: 0%;
 		text-align: center;
 		text-transform: uppercase;
 	}
+
 	p {
 		font-size: 1.25rem;
 		font-weight: 400;
 		line-height: 1.5rem;
-		letter-spacing: 0%;
 		text-align: center;
 		margin: 30px 0;
 	}
+
 	&__btn {
 		display: flex;
 		border: 0.06rem solid rgb(25, 25, 25);
@@ -38,5 +37,72 @@
 		align-items: center;
 		justify-content: center;
 		padding: 11px 0;
+	}
+
+	// Адаптивність
+	@media (max-width: $breakpoint-xl) {
+		max-width: 350px;
+		padding: 100px 20px; // Зменшено padding
+		gap: 15px; // Зменшено gap
+		&__title {
+			font-size: 1.6rem;
+		}
+		p {
+			font-size: 1.1rem;
+			margin: 25px 0;
+		}
+	}
+
+	@media (max-width: $breakpoint-lg) {
+		max-width: 300px;
+		padding: 90px 15px;
+		gap: 12px;
+		&__title {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 1rem;
+			margin: 20px 0;
+		}
+	}
+
+	@media (max-width: $breakpoint-md) {
+		max-width: 250px;
+		padding: 80px 10px;
+		gap: 10px;
+		&__title {
+			font-size: 1.4rem;
+		}
+		p {
+			font-size: 0.95rem;
+			margin: 15px 0;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		max-width: calc(50% - 10px); // Дві картки в ряд з відступами
+		padding: 70px 5px;
+		gap: 8px;
+		&__title {
+			font-size: 1.3rem;
+		}
+		p {
+			font-size: 0.85rem;
+			margin: 10px 0;
+		}
+		&__btn {
+			padding: 8px 0; // Компактніша кнопка
+		}
+	}
+}
+
+.card-car-empty-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px; // Відступ між картками
+
+	@media (max-width: $breakpoint-sm) {
+		gap: 5px; // Менший відступ для маленьких екранів
 	}
 }

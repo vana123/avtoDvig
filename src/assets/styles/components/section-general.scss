@@ -16,6 +16,22 @@
         justify-content: center;
         overflow: hidden;
         gap: 25px;
+        @media (max-width: $breakpoint-xl) {
+			gap: 20px; // Зменшення для великих екранів
+		}
+
+		@media (max-width: $breakpoint-lg) {
+			gap: 15px; // Ще більше зменшення
+		}
+
+		@media (max-width: $breakpoint-md) {
+			gap: 10px; // Мінімальний відступ для середніх екранів
+		}
+
+		@media (max-width: $breakpoint-sm) {
+            justify-content: flex-start;
+			gap: 5px; // Мінімальний відступ для найменших екранів
+		}
     }
     &__midleBtn{
         margin: 0 auto;

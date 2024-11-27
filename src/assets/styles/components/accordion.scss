@@ -1,52 +1,81 @@
 .accordion {
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    outline: none;
-    transition: 0.4s;
-    border: none;
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
+	outline: none;
+	transition: 0.4s;
+	border: none;
+	overflow: hidden;
+	border-radius: 20px;
+	background: rgb(255, 255, 255);
+	padding: clamp(8px, 2vw, 10px) clamp(20px, 6vw, 60px); // Динамічні відступи
+	font-size: clamp(16px, 2.5vw, 24px); // Динамічний розмір шрифту
+	font-weight: 400;
+	line-height: 1.2;
+	margin: clamp(5px, 1.5vw, 10px) 0;
 
-    border-radius: 20px;
-    /* #FFFFFF */
-    background: rgb(255, 255, 255);
-    padding: 10px 60px;
+	position: relative;
 
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 28px;
-    margin: 10px 0;
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%; right: 0;
+		// right: clamp(5px, 2vw, 10px); // Динамічний відступ для іконки
+		width: clamp(12px, 3vw, 20px); // Динамічний розмір іконки
+		height: clamp(12px, 3vw, 20px);
+		background-image: url(../images/icons/arrow-up.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(90deg) translateX(-50%);
+	}
+	&.active {
+		&:after {
+			transform: rotate(180deg) translateX(-50%);
+		    right: 20px;
 
-    position: relative;
+		}
+	}
 
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        width: 20px;
-        height: 20px;
-        background-image: url(../images/icons/arrow-up.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        transform: rotate(90deg) translateX(-50%);
-    }
-    &.active {
-        &:after {
-            transform: rotate(180deg) translateX(-50%);
-        }
-    }
-}
-
-.active,
-.accordion:hover {
-    // background-color: #ccc;
+	// Hover and active state
+	&:hover,
+	&.active {
+		background-color: #f9f9f9; // Змінюється колір при наведенні або активації
+	}
 }
 
 .panel {
-    padding: 0 60px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+	padding: 0 clamp(20px, 6vw, 60px); // Динамічні відступи
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+
+	// Адаптивність для вмісту
+	font-size: clamp(14px, 2vw, 20px); // Динамічний розмір шрифту
+	line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+	.accordion {
+		padding: clamp(6px, 3vw, 8px) clamp(15px, 5vw, 40px); // Зменшення відступів
+		font-size: clamp(14px, 2.5vw, 20px); // Зменшення шрифту
+	}
+
+	.panel {
+		padding: 0 clamp(15px, 5vw, 40px); // Зменшення відступів
+		font-size: clamp(12px, 2vw, 18px); // Ще менший розмір шрифту
+	}
+}
+
+@media (max-width: 576px) {
+	.accordion {
+		padding: clamp(5px, 4vw, 7px) clamp(10px, 4vw, 30px); // Мінімальні відступи
+		font-size: clamp(12px, 3vw, 16px); // Мінімальний розмір шрифту
+	}
+
+	.panel {
+		padding: 0 clamp(10px, 4vw, 30px); // Мінімальні відступи
+		font-size: clamp(10px, 2vw, 14px); // Мінімальний розмір шрифту
+	}
 }
