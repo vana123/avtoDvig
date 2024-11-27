@@ -69,19 +69,22 @@
 	&__adjustments-horizontal {
 		background-image: url(../images/icons/adjustments-horizontal.svg);
 	}
-	.icon__youtube {
+	&__youtube {
 		background-image: url(../images/icons/brand-youtube.svg);
 	}
-	.icon__instagram {
+	&__instagram {
 		background-image: url(../images/icons/brand-instagram.svg);
 	}
-	.icon__tiktok {
+	&__tiktok {
 		background-image: url(../images/icons/brand-tiktok.svg);
 	}
-	.icon__whatsapp {
+	&__whatsapp {
 		background-image: url(../images/icons/brand-whatsapp.svg);
 	}
-	.icon__arrow-up {
+	&__360-number {
+		background-image: url(../images/icons/360-number.svg);
+	}
+	&__arrow-up {
 		background-image: url(../images/icons/arrow-up.svg);
 	}
 	&__cash {
@@ -89,5 +92,17 @@
 	}
 	&__copy {
 		background-image: url(../images/icons/copy.svg);
+	}
+	&__building-bank {
+		background-image: url(../images/icons/building-bank.svg);
+	}
+	&__currency-bitcoin {
+		background-image: url(../images/icons/currency-bitcoin.svg);
+	}
+	&__car-4wd {
+		background-image: url(../images/icons/car-4wd.svg);
+	}
+	&__battery-vertical {
+		background-image: url(../images/icons/battery-vertical.svg);
 	}
 }

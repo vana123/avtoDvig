@@ -1,0 +1,149 @@
+﻿/* Базове мобільне меню */
+.header {
+    position: relative;
+}
+
+.header__nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenuIcons {
+    display: block;
+    width: 60px;
+}
+
+.mobileMenuIcons a {
+    display: inline-block;
+}
+.mobileMenuToggle {
+    display: none;
+}
+
+/* dropdown menu */
+
+.header__nav-item {
+    position: relative;
+    margin-right: 20px;
+}
+.header__nav-dropdown:hover .header__dropdown-menu {
+    display: block;
+}
+
+.header__dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header__dropdown-item {
+    margin: 0;
+    padding: 1em;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header__dropdown-link {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.header__dropdown-link:hover {
+    background-color: #f5f5f5;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav.header__nav a {
+        font-size: 20px;
+        display: inline-block;
+    }
+    nav.header__nav .header__dropdown-link {
+        white-space: pre-line;
+    }
+    .header__nav-list {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(-100%); /* Сховано поза екраном */
+        z-index: 1000;
+        padding-top: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .header__nav-list.active {
+        transform: translateX(0); /* Показує меню */
+    }
+
+    .mobileMenuToggle {
+        display: inline-block;
+    }
+    .mobileMenuIcons {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        z-index: 1050;
+        width: 80px;
+    }
+
+    /* Прибираємо hover для мобільних */
+    .header__dropdown-menu {
+        display: block;
+    }
+
+    /* Робимо вкладене меню видимим при активному стані */
+    .header__nav-dropdown.active .header__dropdown-menu {
+        display: block;
+    }
+
+    /* Робимо вкладене меню статичним */
+    .header__dropdown-menu {
+        position: static;
+        box-shadow: none; /* Прибираємо тінь */
+        padding: 0; /* Прибираємо зайві відступи */
+        background-color: transparent;
+    }
+
+    .header__dropdown-item {
+        padding: 10px 15px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .header__dropdown-link {
+        padding: 10px 15px;
+    }
+}
+
+
+img.emoji {
+    width: 18px;
+    display: inline-block;
+}
+
+.card-car .image {
+    display: flex;
+    align-items: center;
+}
+
+img.no-image {
+    filter: grayscale(100%) brightness(3);
+    padding: 5%;
+}
+

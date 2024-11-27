@@ -5,8 +5,8 @@
 @import './icons.scss';
 
 // components
-@import './components/header.scss';
-@import './components/header-nav.scss';
+// @import './components/header.scss';
+// @import './components/header-nav.scss';
 @import './components/mobile-menu.scss';
 @import './components/btn.scss';
 @import './components/form.scss';
@@ -25,6 +25,16 @@
 @import './components/section-baner.scss';
 @import './components/section-general.scss';
 @import './components/footer.scss';
+
+@import './components/auto-on-commission.scss';
+@import './components/banner.scss';
+@import './components/base.scss';
+@import './components/font-show-car.scss';
+@import './components/front-catalog.scss';
+@import './components/front-customers.scss';
+@import './components/front-order-car.scss';
+@import './components/google-map.scss';
+@import './components/google-rating.scss';
 
 body{
     background-color: $background-color;
