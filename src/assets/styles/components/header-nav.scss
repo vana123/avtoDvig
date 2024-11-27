@@ -8,7 +8,7 @@
 		align-items: center;
 
 		@media screen and (max-width: $breakpoint-md) {
-			display: none;
+			//display: none;
 		}
 
 		&-mobile {
@@ -18,7 +18,7 @@
 			align-items: center;
 
 			@media screen and (min-width: $breakpoint-md) {
-				display: none;
+				//display: none;
 			}
 		}
 	}

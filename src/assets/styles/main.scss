@@ -21,6 +21,7 @@
 @import './components/questions.scss';
 @import './components/accordion.scss';
 @import './components/user.scss';
+@import './components/sectionTeem.scss';
 
 
 @import './components/section-baner.scss';
@@ -37,34 +38,63 @@
 @import './components/google-map.scss';
 @import './components/google-rating.scss';
 
-body{
-    background-color: $background-color;
-    overflow-x: hidden;
+body {
+  background-color: $background-color;
+  overflow-x: hidden;
 }
 
-.container{
-    max-width: $container-width;
-    margin: 0  auto;
-    padding: 5px;
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 5px;
 
-    @media (min-width: 576px) {
-        max-width: 540px;
-      }
-      @media (min-width: 768px) {
-        max-width: 720px;
-      }
-      @media (min-width: 992px) {
-        max-width: 960px;
-      }
-      @media (min-width: 1200px) {
-        max-width: 1140px;
-      }
-      @media (min-width: 1400px) {
-        max-width: 1320px;
-      }
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
 }
 
 
-.hidden{
+.hidden {
   display: none;
+}
+
+
+//services btn
+.button {
+  margin-top: 15px;
+
+  cursor: pointer;
+  width: max-content;
+  hyphens: manual;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 11.5px;
+  border-radius: 50px;
+  border: none;
+  background-color: $primary-color;
+
+  // Медіа запит для екранів менше 1322px
+	@media screen and (max-width: 1322px) {
+		padding: 3px 30px;  // Зменшуємо відступи
+	}
+
+	// Медіа запит для екранів менше $breakpoint-xl
+	@media screen and (max-width: $breakpoint-xl) {
+		padding: 3px 8px;  // Зменшуємо відступи
+	}
 }

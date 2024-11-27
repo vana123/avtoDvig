@@ -3,9 +3,8 @@
     position: relative;
 }
 
-.header__nav-list {
+ul.header__nav-list {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     transition: transform 0.3s ease-in-out;
@@ -34,7 +33,7 @@
 }
 
 .header__dropdown-menu {
-    display: none;
+    //display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -73,7 +72,7 @@
     nav.header__nav .header__dropdown-link {
         white-space: pre-line;
     }
-    .header__nav-list {
+    ul.header__nav-list {
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -146,4 +145,3 @@ img.no-image {
     filter: grayscale(100%) brightness(3);
     padding: 5%;
 }
-

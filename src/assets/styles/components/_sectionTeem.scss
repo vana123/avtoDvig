@@ -1,0 +1,31 @@
+@import "../variables.scss";
+
+.sectionTeem{
+
+&__grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+
+
+@media (max-width: $breakpoint-md) {
+        &{
+          justify-content: center;
+          scale: 0.8;
+          gap: 10px;
+        }
+      }
+}
+
+  &__title{
+    text-align: center;
+    margin-bottom: 25px;
+    @media (max-width: $breakpoint-md) {
+        &{
+          margin-bottom: 0;
+        }
+      }
+  }
+}
