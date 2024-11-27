@@ -1,56 +1,78 @@
 @import "../variables.scss";
 
 .baner {
-	z-index: 0;
-	min-height: 90vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	border-radius: 0rem 0rem 2.19rem 2.19rem;
-	overflow: hidden;
+  z-index: 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0rem 0rem 2.19rem 2.19rem;
+  overflow: hidden;
+  background-color: $text-color;
 
-	&__content {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		// width: $container-width;
-		@media screen and (max-width: $breakpoint-md) {
-			flex-direction: column;
-		}
-	}
+  @media screen and (max-width: $breakpoint-md) {
+    min-height: 55vh;
+  }
 
-	&__info {
-		display: flex;
-		flex-direction: column;
-		color: #fff;
-		max-width: 507px;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // width: $container-width;
+    @media screen and (max-width: $breakpoint-md) {
+      //transform: translateY(-100px);
+      flex-direction: column;
+      iframe {
+        visibility: hidden;
+      }
+    }
 
-		font-size: 1.25rem;
-		font-weight: 500;
-		line-height: 1.5rem;
-		letter-spacing: 0%;
-		text-align: left;
-        h1{
-            margin-right: 83px;
-        }
-        *{
-            margin: 15px 0;
-        }
-	}
 
-	img {
-		object-fit: contain;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1000;
-		filter: brightness(50%);
-        transform: scale(1.1, 1.1);
+  }
 
-		@media (max-width: $breakpoint-md) {
-			display: none;
-		  }
-	}
+  &__info {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    max-width: 507px;
+
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
+    text-align: left;
+    padding: 0 10px;
+
+    h1 {
+      margin-right: 83px;
+    }
+
+    * {
+      margin: 15px 0;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+      //transform: translateY(-100px);
+    }
+  }
+
+  img {
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1000;
+    filter: brightness(50%);
+    transform: scale(1.1, 1.1);
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__form {
+    margin: 0 10px;
+  }
 }
