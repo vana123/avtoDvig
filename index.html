@@ -113,15 +113,15 @@
 						<button class="filterBar__btn filterBar__btn-select">
 							Всі авто
 						</button>
-					</div>
-					<div class="filterBar__btns">
-						<button class="filterBar__btn filterBar__btn-icon"> <span
-								class="icon icon__adjustments-horizontal"></span></button>
-						<select class="filterBar__select" name="sort" id="test id">
-							<option value="0" selected>Сортувати</option>
-							<option value="1">option 1</option>
-							<option value="2">option 2</option>
-							<option value="3">option 3</option>
+						<div class="filterBar__btnsDivoider">
+						</div>
+							<button class="filterBar__btn-icon"> <span
+									class="icon icon__adjustments-horizontal"></span></button>
+							<select class="filterBar__select" name="sort" id="test id">
+								<option value="0" selected>Сортувати</option>
+						<option value="1">option 1</option>
+						<option value="2">option 2</option>
+						<option value="3">option 3</option>
 						</select>
 					</div>
 				</div>
@@ -359,12 +359,62 @@
 				</div>
 			</div>
 		</section>
+		<section class="sectionGeneral-contrast">
+			<div class="container">
+				<h2 class="sectionGeneral-contrast__title" style="margin-bottom: 25px;">НАША КОМАНДА</h2>
+				<div class="sectionGeneral__grid">
+
+					<div class="user__card">
+						<div class="user__card">
+							<div class="user__header">
+								<img class="user__image" src="/media/user/ruslan.webp" alt="Сорокін Р.">
+							</div>
+							<h3 class="user__title">Сорокін Руслан</h3>
+							<h4 class="user__subTitle">Керівник відділу продажів</h4>
+						</div>
+					</div>
+
+					<div class="user__card">
+						<div class="user__card">
+							<div class="user__header">
+								<img class="user__image" src="/media/user/sergiy.webp" alt="Сорокін С.">
+							</div>
+							<h3 class="user__title">Сорокін Сергій</h3>
+							<h4 class="user__subTitle">Фахівець лізингових аукціонів</h4>
+						</div>
+					</div>
+
+					<div class="user__card">
+						<div class="user__card">
+							<div class="user__header">
+								<img class="user__image" src="/media/user/dmytro.webp" alt="Ярмолюк Д.">
+							</div>
+							<h3 class="user__title">Ярмолюк Дмитро</h3>
+							<h4 class="user__subTitle">Контент менеджер</h4>
+						</div>
+					</div>
+
+				</div>
+				<a href="/services/" class="btn-outlined btn-outlined-contrast sectionGeneral__midleBtn">ПЕРЕГЛЯНУТИ
+					БІЛЬШЕ</a>
+			</div>
+		</section>
 		<section>
 			<div class="container">
 				<div class="guestions">
     <h2 class="guestions__title">Питання відповідь</h2>
     <button class="accordion">ЯКІ ГАРАНТІЇ ВИ НАДАЄТЕ?</button>
     <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -473,7 +523,7 @@
 					<p>
 						<span class="icon card-car__body-icon icon__bolt"></span>239 к.с
 					</p>
-					<p>
+					<p> 
 						<span class="icon card-car__body-icon icon__car-turbine"></span>176
 						кВТ
 					</p>
@@ -579,6 +629,139 @@
     </form>
   </div>
   
+
+		<section class="contacts">
+	<div class="container">
+        <h1 class="page__title">Контакти</h1>
+		<div class="contacts__wraper">
+			<div class="contacts__map-wrapper">
+				<iframe
+					class="contacts__map"
+					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10098.047751853503!2d25.4390861!3d50.7475405!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x23d976a724ca7d0!2sAutoDvig!5e0!3m2!1suk!2sua!4v1656592467875!5m2!1suk!2sua"
+					width="500"
+					height="500"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				></iframe>
+			</div>
+			<div class="contacts__info">
+				<h4 class="page__subtitle">Ми поряд</h4>
+				<div class="contacts__subtitle">Адреса</div>
+				<a
+					class="contacts__link contacts__link--address"
+					href="https://goo.gl/maps/oAbQfEes35MX6KWT6"
+					target="_blank"
+					rel="noopener"
+				>
+					вул. Рівненська, 154а, с. Струмівка, Луцький р-н, Волинська область,
+					Україна, 45603
+				</a>
+				<div class="contacts__subtitle">Зв'яжіться з нами</div>
+				<a class="contacts__link contacts__link--phone" href="tel:+380991122777"
+					>+38(099)11-22-777</a
+				>
+				<a class="contacts__link contacts__link--phone" href="tel:+380506026605"
+					>+38(050)602-66-05</a
+				>
+				<a
+					class="contacts__link contacts__link--email"
+					href="mailto:autodvig2019@gmail.com"
+					>autodvig2019@gmail.com</a
+				>
+				<div class="contacts__subtitle">Години</div>
+				<div class="contacts__schedule">
+					<p class="contacts__schedule-item">Пн – Пт: 9.00 – 18.00</p>
+					<p class="contacts__schedule-item">Сб: 9.00 – 17:00</p>
+					<p class="contacts__schedule-item">Нд: 9.00 – 13:00</p>
+				</div>
+				<div class="contacts__subtitle">Підписуйтесь</div>
+				<div class="contacts__social">
+					<a
+						class="contacts__social-link"
+						href="https://www.facebook.com/AutoDvigUA"
+						target="_blank"
+						>Facebook</a
+					>
+					<a
+						class="contacts__social-link"
+						href="https://www.instagram.com/auto_dvig/"
+						target="_blank"
+						>Instagram</a
+					>
+					<a
+						class="contacts__social-link"
+						href="https://www.youtube.com/channel/UC9xaCpSV8BFm3mj5DkoLguA"
+						target="_blank"
+						>YouTube</a
+					>
+					<a
+						class="contacts__social-link"
+						href="https://t.me/AutoDvig"
+						target="_blank"
+						>Telegram</a
+					>
+					<a
+						class="contacts__social-link"
+						href="https://www.tiktok.com/@auto_dvig_ua?_t=8WFVPh1bes9&amp;_r=1"
+						target="_blank"
+						>TikTok</a
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+		<p class="elementor-icon-box-description">
+	Уже більше 15 років наша компанія дарує клієнтам радість від покупки якісних
+	автомобілів із Європи
+</p>
+<p class="elementor-icon-box-description">
+	Всі автомобілі європейської якості, з реальним пробігом і повною історією
+	обслуговування
+</p>
+<p class="elementor-icon-box-description">
+	Підбір автомобіля із врахуванням усіх побажань клієнта щодо марки,
+	комплектації та бюджету
+</p>
+<p class="elementor-icon-box-description">
+	Можливість купівлі авто у лізинг або кредит
+</p>
+<p class="elementor-icon-box-description">
+	Постійне оновлення каталогу
+	<a style="color: #239ad6" href="/autoin/">НАЯВНИХ</a> автомобілів
+</p>
+<p class="elementor-icon-box-description">Співпраця із офіційними дилерами</p>
+<p class="elementor-icon-box-description">
+	Укладання всіх необхідних договорів, здійснення підготовки документів,
+	отримання дозвільної документації, проходження митних процедур, постановка
+	автомобіля на облік -
+	<span style="color: #d70102"
+		>все у одному місці та у найкоротші терміни!</span
+	>
+</p>
+<p class="elementor-icon-box-description">
+	Повний фотоогляд каталогу наявних автомобілів із усіма деталями салону та
+	комплектації. Не виходячи з дому, Ви маєте можливість детально розглянути
+	бажаний автомобіль у всіх подробицях на нашому
+	<a style="color: #239ad6" href="https://t.me/AutoDvig">Telegram-каналі</a> або
+	<a href="/">веб-сайті</a>
+</p>
+
+<p class="elementor-icon-box-description">
+	З нами клієнти економлять свій час на пошук автомобіля і всі інші процедури,
+	необхідні для постановки на обліку сервісних центрах МВС (МРЕВ).<br />
+	Багато щасливих клієнтів,
+	<a style="color: #239ad6" href="/customers/">фотографії</a> з якими ми часто
+	публікуємо на
+	<a style="color: #239ad6" href="https://www.instagram.com/auto_dvig/"
+		>Instagram-акаунті</a
+	>.
+</p>
+
+
 
 	</content>
 	<footer class="footer">
