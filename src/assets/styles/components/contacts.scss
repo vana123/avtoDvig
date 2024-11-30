@@ -1,0 +1,89 @@
+@import "../variables.scss";
+
+.contacts {
+	&__wraper {
+		display: grid;
+		grid-template-columns: 3fr min-content;
+		gap: 35px;
+		@media screen and (max-width: $breakpoint-lg) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__map-wrapper {
+		width: 100%;
+		margin: 0 auto;
+		box-shadow: $box-shadow;
+		border-radius: 2.19rem;
+		overflow: hidden;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+	}
+
+	&__title {
+		font-size: 3.5rem;
+		font-weight: 500;
+		line-height: 3.75rem;
+	}
+
+	&__label {
+		font-weight: bold;
+		margin-top: $spacing-base;
+		color: $text-color;
+	}
+
+	&__link {
+		display: block;
+		margin-bottom: $spacing-small;
+		color: $text-color;
+		text-decoration: none;
+		transition: color $transition-duration;
+
+		&--phone {
+			color: $primary-color;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__schedule {
+		&-item {
+			margin: $spacing-small 0;
+			color: $text-color;
+		}
+	}
+
+	&__social {
+		display: flex;
+		justify-content: center;
+		gap: $spacing-large;
+		margin-top: $spacing-large;
+
+		&-link {
+			color: $text-color;
+			text-decoration: none;
+			transition: color $transition-duration;
+
+			&:hover {
+				color: $primary-color;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__info {
+		border-radius: 2.19rem;
+		box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+		background: rgb(255, 255, 255);
+		padding: 1.5rem;
+		width: min-content;
+		@media screen and (max-width: $breakpoint-lg) {
+			width: 100%;
+		}
+	}
+}
