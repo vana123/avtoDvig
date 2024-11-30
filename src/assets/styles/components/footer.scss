@@ -42,7 +42,7 @@ $mobile_footer_width: 768px;
 	}
 
 	&__logo {
-		width: 230px;
+		//width: 230px;
 		margin-bottom: 15px;
 		@media screen and (min-width: $mobile_footer_width) {
 			grid-area: logo;

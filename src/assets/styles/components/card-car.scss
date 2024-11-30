@@ -8,7 +8,7 @@
 	background-color: #fff;
 	border-radius: 2.19rem;
 	gap: 17px;
-	max-width: 400px; // Базовий розмір картки
+	max-width: 360px; // Базовий розмір картки
 	justify-self: center;
 	overflow: hidden;
 
@@ -80,11 +80,12 @@
 
 	// Адаптивність
 	@media (max-width: $breakpoint-xl) {
-		max-width: 350px;
+		max-width: 303px;
 	}
 
 	@media (max-width: $breakpoint-lg) {
-		max-width: 300px;
+		max-width: 226px;
+		padding: 13px;
 	}
 
 	@media (max-width: $breakpoint-md) {

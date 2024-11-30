@@ -11,7 +11,7 @@ ul.header__nav-list {
 }
 
 .mobileMenuIcons {
-    display: block;
+    display: flex;
     width: 60px;
 }
 
@@ -74,6 +74,8 @@ ul.header__nav-list {
     }
     ul.header__nav-list {
         flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
         position: fixed;
         top: 0;
         left: 0;
@@ -85,8 +87,14 @@ ul.header__nav-list {
         z-index: 1000;
         padding-top: 20px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        overflow-y: scroll;
     }
 
+    .header__nav{
+        li:last-child{
+            margin-top: auto;
+        }
+    }
     .header__nav-list.active {
         transform: translateX(0); /* Показує меню */
     }
@@ -127,6 +135,12 @@ ul.header__nav-list {
 
     .header__dropdown-link {
         padding: 10px 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header__logo--mobile{
+        display: none;
     }
 }
 
