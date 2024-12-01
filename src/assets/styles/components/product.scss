@@ -32,7 +32,7 @@
 				max-width: 48.44rem;
 				max-height: 41.63rem;
 				transition: opacity 0.5s ease;
-        border-radius: 1.25rem;
+				border-radius: 1.25rem;
 
 				&.active {
 					display: block;
@@ -51,8 +51,8 @@
 			position: absolute;
 			z-index: 10;
 
-      padding-block: 0;
-      padding-inline: 0;
+			padding-block: 0;
+			padding-inline: 0;
 
 			&--prev {
 				background-image: url("../images/icons/slider.svg");
@@ -69,7 +69,7 @@
 			&--fullscreen {
 				background-image: url("../images/icons/arrow-maximize.svg");
 				right: 10px;
-        bottom: 10px;
+				bottom: 10px;
 			}
 		}
 	}
@@ -360,4 +360,22 @@
 			color: #bbb;
 		}
 	}
+}
+
+.youtube-360 {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+.youtube-360 .icon {
+	width: 1.8rem;
+	height: 1.8rem;
+}
+span.measure {
+	font-size: small;
+	font-weight: bold;
+	margin-left: 2px;
 }
