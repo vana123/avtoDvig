@@ -471,13 +471,33 @@
 		<section class="product">
 	<div class="container">
 		<div class="product__wraper">
-			<div class="product__imgs">
-				<img src="assets/images/car1.png" alt="" class="product__img" />
+			<div class="product__slider">
+				<button class="slider__btn slider__btn--prev"></button>
+				<div class="product__imgs">
+					<img
+						src="assets/images/car1.png"
+						alt=""
+						class="product__img active"
+					/>
+					<img src="assets/images/baner1.jpeg" alt="" class="product__img" />
+				</div>
+				<button class="slider__btn slider__btn--next"></button>
+				<button class="slider__btn slider__btn--fullscreen"></button>
 			</div>
+
+			<!-- Modal for fullscreen image -->
+			<div class="product-modal" id="productFullscreenModal">
+				<button class="modal__close-btn" id="closeModalButton">Close</button>
+				<span class="modal__close" id="closeProductModal">&times;</span>
+				<img class="modal__content" id="modalImage" />
+			</div>
+
 			<div class="product__info">
 				<div class="product__header">
-					<div style="display: flex; justify-content: space-between;">
-						<div class="product__status product__status-inStock">В наявності</div>
+					<div style="display: flex; justify-content: space-between">
+						<div class="product__status product__status-inStock">
+							В наявності
+						</div>
 						<span class="icon icon__like"></span>
 					</div>
 					<h1>Chevrolet SSR (Super Sport Roadster)</h1>
@@ -523,7 +543,7 @@
 					<p>
 						<span class="icon card-car__body-icon icon__bolt"></span>239 к.с
 					</p>
-					<p> 
+					<p>
 						<span class="icon card-car__body-icon icon__car-turbine"></span>176
 						кВТ
 					</p>
@@ -534,12 +554,10 @@
 						>автомат
 					</p>
 					<p>
-						<span class="icon card-car__body-icon icon__car-4wd"></span
-						>повний
+						<span class="icon card-car__body-icon icon__car-4wd"></span>повний
 					</p>
 					<p>
-						<span class="icon card-car__body-icon icon__car"></span
-						>тип кузова
+						<span class="icon card-car__body-icon icon__car"></span>тип кузова
 					</p>
 					<p>
 						<span class="icon card-car__body-icon icon__battery-vertical"></span
@@ -607,6 +625,57 @@
 	</div>
 </section>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const images = document.querySelectorAll(".product__img");
+		const prevBtn = document.querySelector(".slider__btn--prev");
+		const nextBtn = document.querySelector(".slider__btn--next");
+		const fullscreenBtn = document.querySelector(".slider__btn--fullscreen");
+		const modalElement = document.getElementById("productFullscreenModal");
+		const modalImage = document.getElementById("modalImage");
+		const closeModal = document.getElementById("closeProductModal");
+		let currentIndex = 0;
+
+		function showImage(index) {
+			images.forEach((img, i) => {
+				img.classList.toggle("active", i === index);
+			});
+		}
+
+		function prevImage() {
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImage(currentIndex);
+		}
+
+		function nextImage() {
+			currentIndex = (currentIndex + 1) % images.length;
+			showImage(currentIndex);
+		}
+
+		function openModal() {
+			const currentImage = images[currentIndex];
+			modalElement.style.display = "flex";
+			modalImage.src = currentImage.src;
+		}
+
+		function closeModalFunc() {
+			modalElement.style.display = "none";
+		}
+
+		prevBtn.addEventListener("click", prevImage);
+		nextBtn.addEventListener("click", nextImage);
+		fullscreenBtn.addEventListener("click", openModal);
+		closeModal.addEventListener("click", closeModalFunc);
+
+		// Close modal when clicking outside of the image
+		modalElement.addEventListener("click", function (event) {
+			if (event.target !== modalImage) {
+				closeModalFunc();
+			}
+		});
+	});
+</script>
+
 		<div class="contact-form">
     <h2 class="contact-form__title">ВИНИКЛИ ПИТАННЯ?</h2>
     <p class="contact-form__subtitle">
@@ -630,137 +699,58 @@
   </div>
   
 
-		<section class="contacts">
-	<div class="container">
-        <h1 class="page__title">Контакти</h1>
-		<div class="contacts__wraper">
-			<div class="contacts__map-wrapper">
-				<iframe
-					class="contacts__map"
-					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10098.047751853503!2d25.4390861!3d50.7475405!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x23d976a724ca7d0!2sAutoDvig!5e0!3m2!1suk!2sua!4v1656592467875!5m2!1suk!2sua"
-					width="500"
-					height="500"
-					style="border: 0"
-					allowfullscreen=""
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-				></iframe>
-			</div>
-			<div class="contacts__info">
-				<h4 class="page__subtitle">Ми поряд</h4>
-				<div class="contacts__subtitle">Адреса</div>
-				<a
-					class="contacts__link contacts__link--address"
-					href="https://goo.gl/maps/oAbQfEes35MX6KWT6"
-					target="_blank"
-					rel="noopener"
-				>
-					вул. Рівненська, 154а, с. Струмівка, Луцький р-н, Волинська область,
-					Україна, 45603
-				</a>
-				<div class="contacts__subtitle">Зв'яжіться з нами</div>
-				<a class="contacts__link contacts__link--phone" href="tel:+380991122777"
-					>+38(099)11-22-777</a
-				>
-				<a class="contacts__link contacts__link--phone" href="tel:+380506026605"
-					>+38(050)602-66-05</a
-				>
-				<a
-					class="contacts__link contacts__link--email"
-					href="mailto:autodvig2019@gmail.com"
-					>autodvig2019@gmail.com</a
-				>
-				<div class="contacts__subtitle">Години</div>
-				<div class="contacts__schedule">
-					<p class="contacts__schedule-item">Пн – Пт: 9.00 – 18.00</p>
-					<p class="contacts__schedule-item">Сб: 9.00 – 17:00</p>
-					<p class="contacts__schedule-item">Нд: 9.00 – 13:00</p>
-				</div>
-				<div class="contacts__subtitle">Підписуйтесь</div>
-				<div class="contacts__social">
-					<a
-						class="contacts__social-link"
-						href="https://www.facebook.com/AutoDvigUA"
-						target="_blank"
-						>Facebook</a
-					>
-					<a
-						class="contacts__social-link"
-						href="https://www.instagram.com/auto_dvig/"
-						target="_blank"
-						>Instagram</a
-					>
-					<a
-						class="contacts__social-link"
-						href="https://www.youtube.com/channel/UC9xaCpSV8BFm3mj5DkoLguA"
-						target="_blank"
-						>YouTube</a
-					>
-					<a
-						class="contacts__social-link"
-						href="https://t.me/AutoDvig"
-						target="_blank"
-						>Telegram</a
-					>
-					<a
-						class="contacts__social-link"
-						href="https://www.tiktok.com/@auto_dvig_ua?_t=8WFVPh1bes9&amp;_r=1"
-						target="_blank"
-						>TikTok</a
-					>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
+		
 		<section class="about">
-	<h2 class="page__title">Про нас</h2>
-	<div class="about__description">
-		<p class="about__text">
-			Уже більше 15 років наша компанія дарує клієнтам радість від покупки
-			якісних автомобілів із Європи
-		</p>
-		<p class="about__text">
-			Всі автомобілі європейської якості, з реальним пробігом і повною історією
-			обслуговування
-		</p>
-		<p class="about__text">
-			Підбір автомобіля із врахуванням усіх побажань клієнта щодо марки,
-			комплектації та бюджету
-		</p>
-		<p class="about__text">Можливість купівлі авто у лізинг або кредит</p>
-		<p class="about__text">
-			Постійне оновлення каталогу
-			<a style="color: #239ad6" href="/autoin/">НАЯВНИХ</a> автомобілів
-		</p>
-		<p class="about__text">Співпраця із офіційними дилерами</p>
-		<p class="about__text">
-			Укладання всіх необхідних договорів, здійснення підготовки документів,
-			отримання дозвільної документації, проходження митних процедур, постановка
-			автомобіля на облік -
-			<span style="color: #d70102"
-				>все у одному місці та у найкоротші терміни!</span
-			>
-		</p>
-		<p class="about__text">
-			Повний фотоогляд каталогу наявних автомобілів із усіма деталями салону та
-			комплектації. Не виходячи з дому, Ви маєте можливість детально розглянути
-			бажаний автомобіль у всіх подробицях на нашому
-			<a style="color: #239ad6" href="https://t.me/AutoDvig">Telegram-каналі</a>
-			або <a href="/">веб-сайті</a>
-		</p>
-		<p class="about__text">
-			З нами клієнти економлять свій час на пошук автомобіля і всі інші
-			процедури, необхідні для постановки на обліку сервісних центрах МВС
-			(МРЕВ).<br />
-			Багато щасливих клієнтів,
-			<a style="color: #239ad6" href="/customers/">фотографії</a> з якими ми
-			часто публікуємо на
-			<a style="color: #239ad6" href="https://www.instagram.com/auto_dvig/"
-				>Instagram-акаунті</a
-			>.
-		</p>
+	<div class="container">
+		<h2 class="page__title">Про нас</h2>
+		<div class="about__description">
+			<p class="about__text">
+				Уже більше 15 років наша компанія дарує клієнтам радість від покупки
+				якісних автомобілів із Європи
+			</p>
+			<p class="about__text">
+				Всі автомобілі європейської якості, з реальним пробігом і повною
+				історією обслуговування
+			</p>
+			<p class="about__text">
+				Підбір автомобіля із врахуванням усіх побажань клієнта щодо марки,
+				комплектації та бюджету
+			</p>
+			<p class="about__text">Можливість купівлі авто у лізинг або кредит</p>
+			<p class="about__text">
+				Постійне оновлення каталогу
+				<a style="color: #239ad6" href="/autoin/">НАЯВНИХ</a> автомобілів
+			</p>
+			<p class="about__text">Співпраця із офіційними дилерами</p>
+			<p class="about__text">
+				Укладання всіх необхідних договорів, здійснення підготовки документів,
+				отримання дозвільної документації, проходження митних процедур,
+				постановка автомобіля на облік -
+				<span style="color: #d70102"
+					>все у одному місці та у найкоротші терміни!</span
+				>
+			</p>
+			<p class="about__text">
+				Повний фотоогляд каталогу наявних автомобілів із усіма деталями салону
+				та комплектації. Не виходячи з дому, Ви маєте можливість детально
+				розглянути бажаний автомобіль у всіх подробицях на нашому
+				<a style="color: #239ad6" href="https://t.me/AutoDvig"
+					>Telegram-каналі</a
+				>
+				або <a href="/">веб-сайті</a>
+			</p>
+			<p class="about__text">
+				З нами клієнти економлять свій час на пошук автомобіля і всі інші
+				процедури, необхідні для постановки на обліку сервісних центрах МВС
+				(МРЕВ).<br />
+				Багато щасливих клієнтів,
+				<a style="color: #239ad6" href="/customers/">фотографії</a> з якими ми
+				часто публікуємо на
+				<a style="color: #239ad6" href="https://www.instagram.com/auto_dvig/"
+					>Instagram-акаунті</a
+				>.
+			</p>
+		</div>
 	</div>
 </section>
 
