@@ -134,6 +134,12 @@
     gap: 12px;
     flex-wrap: wrap;
 
+    &-dolar{
+      &::before{
+        content: "$";
+      }
+    }
+
     &-now {
       font-size: 28px;
       font-weight: 500;
