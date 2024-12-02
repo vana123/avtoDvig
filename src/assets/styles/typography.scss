@@ -36,11 +36,14 @@ h1 {
 	font-weight: 500;
 	line-height: 2.94rem;
 	letter-spacing: 2%;
+	padding: 0 10px;
 	@media screen and (max-width: $breakpoint-sm) {
 		font-size: 1.13rem;
+		padding: 0 10px !important;
 	}
 	@media screen and (max-width: $breakpoint-xl) {
 		font-size: 2rem;
+		padding: 0;
 	}
 }
 

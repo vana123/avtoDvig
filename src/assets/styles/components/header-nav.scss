@@ -71,6 +71,18 @@
 	display: block;
 }
 
+@media screen and (max-width: 768px) {
+	.header__nav-dropdown .header__dropdown-menu {
+		display: initial;
+		position: initial;
+	}
+    nav.header__nav .header__dropdown-link {
+        white-space: pre-line;
+        color: gray;
+        font-size: small;
+    }
+}
+
 .header__dropdown-menu {
 	display: none;
 	position: absolute;

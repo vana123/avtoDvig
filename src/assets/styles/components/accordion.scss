@@ -71,11 +71,11 @@
 @media (max-width: 576px) {
 	.accordion {
 		padding: clamp(5px, 4vw, 7px) clamp(10px, 4vw, 30px); // Мінімальні відступи
-		font-size: clamp(12px, 3vw, 16px); // Мінімальний розмір шрифту
+		font-size: clamp(15px, 3vw, 16px); // Мінімальний розмір шрифту
 	}
 
 	.panel {
 		padding: 0 clamp(10px, 4vw, 30px); // Мінімальні відступи
-		font-size: clamp(10px, 2vw, 14px); // Мінімальний розмір шрифту
+		font-size: clamp(13px, 2vw, 14px); // Мінімальний розмір шрифту
 	}
 }
