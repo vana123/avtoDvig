@@ -41,21 +41,4 @@
     display: block;
     border-radius: 4px;
 }
-.messenger-widget.hidden {
-    display: none;
-}
-.messenger-options {
-    display: flex;
-    gap: 10px;
-}
-.messenger-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
+

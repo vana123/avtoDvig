@@ -1,13 +1,33 @@
 <section class="product">
 	<div class="container">
 		<div class="product__wraper">
-			<div class="product__imgs">
-				<img src="../assets/images/car1.png" alt="" class="product__img" />
+			<div class="product__slider">
+				<button class="slider__btn slider__btn--prev"></button>
+				<div class="product__imgs">
+					<img
+						src="../assets/images/car1.png"
+						alt=""
+						class="product__img active"
+					/>
+					<img src="../assets/images/baner1.jpeg" alt="" class="product__img" />
+				</div>
+				<button class="slider__btn slider__btn--next"></button>
+				<button class="slider__btn slider__btn--fullscreen"></button>
 			</div>
+
+			<!-- Modal for fullscreen image -->
+			<div class="product-modal" id="productFullscreenModal">
+				<button class="modal__close-btn" id="closeModalButton">Close</button>
+				<span class="modal__close" id="closeProductModal">&times;</span>
+				<img class="modal__content" id="modalImage" />
+			</div>
+
 			<div class="product__info">
 				<div class="product__header">
-					<div style="display: flex; justify-content: space-between;">
-						<div class="product__status product__status-inStock">В наявності</div>
+					<div style="display: flex; justify-content: space-between">
+						<div class="product__status product__status-inStock">
+							В наявності
+						</div>
 						<span class="icon icon__like"></span>
 					</div>
 					<h1>Chevrolet SSR (Super Sport Roadster)</h1>
@@ -53,7 +73,7 @@
 					<p>
 						<span class="icon card-car__body-icon icon__bolt"></span>239 к.с
 					</p>
-					<p> 
+					<p>
 						<span class="icon card-car__body-icon icon__car-turbine"></span>176
 						кВТ
 					</p>
@@ -64,12 +84,10 @@
 						>автомат
 					</p>
 					<p>
-						<span class="icon card-car__body-icon icon__car-4wd"></span
-						>повний
+						<span class="icon card-car__body-icon icon__car-4wd"></span>повний
 					</p>
 					<p>
-						<span class="icon card-car__body-icon icon__car"></span
-						>тип кузова
+						<span class="icon card-car__body-icon icon__car"></span>тип кузова
 					</p>
 					<p>
 						<span class="icon card-car__body-icon icon__battery-vertical"></span
@@ -136,3 +154,54 @@
 		</div>
 	</div>
 </section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const images = document.querySelectorAll(".product__img");
+		const prevBtn = document.querySelector(".slider__btn--prev");
+		const nextBtn = document.querySelector(".slider__btn--next");
+		const fullscreenBtn = document.querySelector(".slider__btn--fullscreen");
+		const modalElement = document.getElementById("productFullscreenModal");
+		const modalImage = document.getElementById("modalImage");
+		const closeModal = document.getElementById("closeProductModal");
+		let currentIndex = 0;
+
+		function showImage(index) {
+			images.forEach((img, i) => {
+				img.classList.toggle("active", i === index);
+			});
+		}
+
+		function prevImage() {
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImage(currentIndex);
+		}
+
+		function nextImage() {
+			currentIndex = (currentIndex + 1) % images.length;
+			showImage(currentIndex);
+		}
+
+		function openModal() {
+			const currentImage = images[currentIndex];
+			modalElement.style.display = "flex";
+			modalImage.src = currentImage.src;
+		}
+
+		function closeModalFunc() {
+			modalElement.style.display = "none";
+		}
+
+		prevBtn.addEventListener("click", prevImage);
+		nextBtn.addEventListener("click", nextImage);
+		fullscreenBtn.addEventListener("click", openModal);
+		closeModal.addEventListener("click", closeModalFunc);
+
+		// Close modal when clicking outside of the image
+		modalElement.addEventListener("click", function (event) {
+			if (event.target !== modalImage) {
+				closeModalFunc();
+			}
+		});
+	});
+</script>

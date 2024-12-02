@@ -1,100 +1,107 @@
 @import '../variables.scss';
 
 .card-car {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 25px;
-	background-color: #fff;
-	border-radius: 2.19rem;
-	gap: 17px;
-	max-width: 360px; // Базовий розмір картки
-	justify-self: center;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 2.19rem;
+  gap: 17px;
+  max-width: 360px; // Базовий розмір картки
+  justify-self: center;
+  overflow: hidden;
 
-	&__titel{
-		font-size: clamp(0.6rem, 4.2vw, 1.5rem); // Менший розмір шрифту
-	}
+  &__titel {
+    font-size: clamp(0.6rem, 4.2vw, 1.5rem); // Менший розмір шрифту
+  }
 
-	&__header {
-		position: relative;
-		max-height: 257px;
-	}
+  &__header {
+    position: relative;
+    max-height: 257px;
 
-	&__body {
-		display: grid;
-		grid-template-columns: max-content max-content;
-		justify-content: space-between;
-		gap: 5%; // Відступи між елементами у відсотках
-		height: fit-content;
+    &__a-wrapper {
+      max-height: 257px;
+      display: block;
+      aspect-ratio: 1.33;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    gap: 5%; // Відступи між елементами у відсотках
+    height: fit-content;
 
 
-		p {
-			display: flex;
-			align-items: center;
-			font-size: clamp(0.6rem, 2.2vw, 1rem); // Менший розмір шрифту
+    p {
+      display: flex;
+      align-items: center;
+      font-size: clamp(0.6rem, 2.2vw, 1rem); // Менший розмір шрифту
 
-			& .card-car__body-icon {
-				filter: invert(58%) sepia(89%) saturate(2%) hue-rotate(314deg) brightness(88%) contrast(88%);
-				margin-right: 4%; 
-			}
-		}
-		@media (max-width: $breakpoint-md) {
-			gap: 0;
-		}
+      & .card-car__body-icon {
+        filter: invert(58%) sepia(89%) saturate(2%) hue-rotate(314deg) brightness(88%) contrast(88%);
+        margin-right: 4%;
+      }
+    }
 
-	}
+    @media (max-width: $breakpoint-md) {
+      gap: 0;
+    }
 
-	&__footer {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+  }
 
-	&__like {
-		position: absolute;
-		top: 10px;
-		right: 13px;
-	}
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-	&__price {
-		font-size: clamp(0.6rem, 5.2vw, 1.5rem); // Менший розмір шрифту
-		font-weight: 400;
-		line-height: 1.75rem;
-		color: $primary-color;
-		white-space: nowrap;
+  &__like {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+  }
 
-		&-old {
-			color: $text-color;
-			font-size: 0.81rem;
-			font-weight: 400;
-			line-height: 1.13rem;
-			text-decoration-line: line-through;
-			white-space: nowrap;
-		}
-	}
+  &__price {
+    font-size: clamp(0.6rem, 5.2vw, 1.5rem); // Менший розмір шрифту
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: $primary-color;
+    white-space: nowrap;
 
-	&__img {
-		border-radius: 1.25rem;
-	}
+    &-old {
+      color: $text-color;
+      font-size: 0.81rem;
+      font-weight: 400;
+      line-height: 1.13rem;
+      text-decoration-line: line-through;
+      white-space: nowrap;
+    }
+  }
 
-	// Адаптивність
-	@media (max-width: $breakpoint-xl) {
-		max-width: 303px;
-	}
+  &__img {
+    border-radius: 1.25rem;
+  }
 
-	@media (max-width: $breakpoint-lg) {
-		max-width: 226px;
-		padding: 13px;
-	}
+  // Адаптивність
+  @media (max-width: $breakpoint-xl) {
+    max-width: 303px;
+  }
 
-	@media (max-width: $breakpoint-md) {
-		max-width: 250px;
-	}
+  @media (max-width: $breakpoint-lg) {
+    max-width: 226px;
+    padding: 13px;
+  }
 
-	@media (max-width: $breakpoint-sm) {
-		max-width: calc(50% - 3px); // Дві картки в ряд з відступами
-		padding: 10px;
-		gap: 8px;
-	}
+  @media (max-width: $breakpoint-md) {
+    max-width: 250px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: calc(50% - 3px); // Дві картки в ряд з відступами
+    padding: 10px;
+    gap: 8px;
+  }
 }

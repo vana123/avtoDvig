@@ -1,0 +1,35 @@
+.messenger {
+  &-widget {
+    position: absolute;
+    bottom: -58px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #fff;
+    box-shadow: 0px 0px 9px 0px rgba(25, 25, 25, 0.1);
+    border-radius: 2.19rem;
+
+    padding: 5px;
+  }
+
+  &-options {
+    display: flex;
+    gap: 10px;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+  }
+}
+
+.messenger-widget.hidden {
+  display: none;
+}
