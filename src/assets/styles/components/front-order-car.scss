@@ -1,107 +1,213 @@
-﻿/* Загальний стиль форми */
-form.order-car {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-}
+﻿@import "../variables.scss";
+/* Загальний стиль форми */
+$form-border-radius: 40px;
 
-/* Заголовок форми */
-form.order-car h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
+.base-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid $primary-color;
+  border-radius: $form-border-radius;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
 
-/* Стиль для кожного поля форми */
-form.order-car label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-form.order-car input[type="text"],
-form.order-car input[type="tel"],
-form.order-car input[type="number"],
-form.order-car input[type="file"],
-form.order-car textarea,
-form.order-car select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-/* Стиль для груп полів (fieldset) */
-fieldset {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-legend {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Стиль для радіо-кнопок і чекбоксів */
-form.order-car input[type="radio"],
-form.order-car input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-/* Відступи між елементами радіо-кнопок і чекбоксів */
-.wpcf7-list-item {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 14px;
-    color: #555;
-}
-
-/* Стиль для кнопки відправки */
-form.order-car button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form.order-car button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Стиль для повідомлень про помилки */
-form.order-car .error {
-    color: #d9534f;
+  .errors {
+    color: $primary-color;
     font-size: 14px;
     margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: $form-border-radius;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+  }
+
+  fieldset {
+    margin-bottom: 20px;
+    border: none;
+
+    legend {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    > div {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      @media screen and (max-width: 425px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+      }
+
+      > div {
+        label {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      //appearance: none;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border: 2px solid #ccc;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+
+      &:checked {
+        background-color: $primary-color;
+        border-color: $primary-color;
+      }
+    }
+    input[type="checkbox"],{
+      border-radius: 4px;
+    }
+    input[type="radio"]{
+      border-radius: 50%;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  button[type="submit"] {
+    display: inline-block;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: $form-border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  .choices{
+    border-radius: 50px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 9px 0px rgba(25, 25, 25, 0.1);
+    //&[data-type*=select-one]::after {
+    //  border-color: $primary-color transparent transparent;
+    //}
+    //&[data-type*=select-one].is-open::after {
+    //  //border-color: $primary-color transparent transparent;
+    //}
+    &__inner{
+      border: none;
+    }
+  }
 }
 
-/* Підказки для полів */
-form.order-car input::placeholder,
-form.order-car textarea::placeholder {
-    color: #aaa;
+
+.select {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+
+  &__trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+
+    &-text {
+      font-size: 16px;
+      color: #333;
+    }
+
+    &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      margin-left: 10px;
+      border-right: 2px solid #007bff;
+      border-bottom: 2px solid #007bff;
+      transform: rotate(45deg);
+      transition: transform 0.2s;
+    }
+  }
+
+  &__arrow {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #007bff;
+    border-bottom: 2px solid #007bff;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+
+    &.select__options--visible {
+      display: block;
+    }
+  }
+
+  &__option {
+    padding: 10px 15px;
+    cursor: pointer;
     font-size: 14px;
+    color: #333;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+  &--open &__arrow {
+    transform: rotate(-135deg);
+  }
 }
 
-/* Стили для текстової області (textarea) */
-form.order-car textarea {
-    resize: vertical;
-    min-height: 100px;
-}

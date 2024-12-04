@@ -3,129 +3,148 @@
 $mobile_footer_width: 768px;
 
 .footer {
-	width: 100%;
-	background-color: $text-color;
-	color: $background-color;
-	padding: 19px 0;
-	margin-top: 35px;
-	border-radius: 35px 35px 0px 0px;
-	overflow: hidden;
+  width: 100%;
+  background-color: $text-color;
+  color: $background-color;
+  padding: 19px 0;
+  margin-top: 35px;
+  border-radius: 35px 35px 0px 0px;
+  overflow: hidden;
 
-	&__content {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 20px;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-template-columns: 1fr auto 1fr;
-			grid-template-areas:
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-template-columns: 1fr auto 1fr;
+      grid-template-areas:
 				"title title phones"
 				"logo adres socIcons"
 				"map map map"
 				"footer footer footer";
-			align-items: end;
-		}
-	}
+      align-items: end;
+    }
+  }
 
-	&__title {
-		span {
-			font-weight: 700;
-		}
-		font-size: 3.5rem;
-		font-weight: 200;
-		line-height: 3.75rem;
-		margin-bottom: 15px;
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: title;
-			align-self: start;
-		}
-	}
+  &__title {
+    span {
+      font-weight: 700;
+    }
 
-	&__logo {
-		//width: 230px;
-		margin-bottom: 15px;
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: logo;
-		}
-	}
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: 3.75rem;
+    margin-bottom: 15px;
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: title;
+      align-self: start;
+    }
+  }
 
-	&__phones {
-		columns: 2;
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: phones;
-		}
-	}
+  &__logo {
+    //width: 230px;
+    margin-bottom: 15px;
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: logo;
+    }
+  }
 
-	&__phone {
-		display: flex;
-		width: fit-content;
-		color: $background-color;
-		border: 0.5px solid rgb(255, 255, 255);
-		font-size: 18px;
-		font-weight: 100;
-		line-height: 28px;
-		border-radius: 20px;
-		padding: 4.5px 15px;
-		white-space: nowrap;
+  &__phones {
+    columns: 2;
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: phones;
+    }
+  }
 
-		margin-bottom: 15px;
-	}
+  &__phone {
+    display: flex;
+    width: fit-content;
+    color: $background-color;
+    border: 0.5px solid rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 28px;
+    border-radius: 20px;
+    padding: 4.5px 15px;
+    white-space: nowrap;
 
-	&__up {
-		display: flex;
-		width: fit-content;
-		color: $text-color;
-		background-color: $background-color;
-		border: 0.5px solid rgb(255, 255, 255);
-		font-size: 18px;
-		font-weight: 100;
-		line-height: 28px;
-		border-radius: 20px;
-		padding: 4.5px 15px;
-	}
+    margin-bottom: 15px;
+  }
 
-	&__socIcons {
-		display: flex;
+  &__up {
+    width: fit-content;
+    color: $text-color;
+    background-color: $background-color;
+    border: 0.5px solid rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 28px;
+    border-radius: 20px;
+    padding: 4.5px 15px;
 
-		span {
-			width: 31px;
-			margin: 0 10px;
-		}
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: socIcons;
-			justify-self: end;
-		}
-	}
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none; // Приховуємо за замовчуванням
+    transition: opacity 0.3s;
+    z-index: 100;
 
-	&__adres {
-		font-size: 1.13rem;
-		font-weight: 400;
-		line-height: 1.75rem;
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: adres;
-			align-self: and;
-		}
-	}
+    &.visible {
+      display: flex;
+      opacity: 1;
+    }
 
-	&__map {
-		min-height: 120px;
-		width: 100%;
-		border-radius: 10px;
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: map;
-		}
-	}
+    &.hidden {
+      opacity: 0;
+      display: none;
+    }
+  }
 
-	&__footer {
-		color: rgb(153, 153, 153);
-		font-family: e-Ukraine;
-		font-size: 10px;
-		font-weight: 100;
-		line-height: 18px;
-		letter-spacing: 0%;
-		text-align: center;
-		@media screen and (min-width: $mobile_footer_width) {
-			grid-area: footer;
-		}
-	}
+  &__socIcons {
+    display: flex;
+
+    span {
+      width: 31px;
+      margin: 0 10px;
+    }
+
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: socIcons;
+      justify-self: end;
+    }
+  }
+
+  &__adres {
+    font-size: 1.13rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: adres;
+      align-self: and;
+    }
+  }
+
+  &__map {
+    min-height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: map;
+    }
+  }
+
+  &__footer {
+    color: rgb(153, 153, 153);
+    font-family: e-Ukraine;
+    font-size: 10px;
+    font-weight: 100;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    @media screen and (min-width: $mobile_footer_width) {
+      grid-area: footer;
+    }
+  }
 }

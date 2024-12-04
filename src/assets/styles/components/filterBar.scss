@@ -1,63 +1,81 @@
 @import '../variables.scss';
 
 .filterBar {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap; // Дозволяє перенесення елементів
-	justify-content: space-between;
-	align-items: center;
-	margin: clamp(10px, 3vw, 21px) 0;
-	gap: clamp(5px, 2vw, 15px); // Динамічний відступ між елементами
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; // Дозволяє перенесення елементів
+  justify-content: space-between;
+  align-items: center;
+  margin: clamp(10px, 3vw, 21px) 0;
+  gap: clamp(5px, 2vw, 15px); // Динамічний відступ між елементами
 
 
-	&__btns {
-		display: flex;
-		flex-wrap: wrap; // Дозволяє переносити кнопки на новий рядок
-		justify-content: flex-start; // Вирівнювання по лівому краю
-		gap: clamp(5px, 1vw, 15px);
-		// justify-content: space-between;
-		width: 100%; // Забезпечує використання всього доступного простору
-	}
+  &__btns {
+    display: flex;
+    flex-wrap: wrap; // Дозволяє переносити кнопки на новий рядок
+    justify-content: flex-start; // Вирівнювання по лівому краю
+    gap: clamp(5px, 1vw, 15px);
+    // justify-content: space-between;
+    width: 100%; // Забезпечує використання всього доступного простору
+  }
 
-	&__btn,
-	&__select {
-		max-width: 200px; // Максимальна ширина кнопки
-		padding: clamp(8px, 2vw, 10px) clamp(10px, 3vw, 38px); // Адаптивні відступи
-		height: clamp(35px, 4vw, 40px); // Адаптивна висота
-		font-size: clamp(14px, 2vw, 16px); // Адаптивний розмір шрифту
-		border-radius: 3.13rem;
-		background: rgb(255, 255, 255);
-		border: none;
-		cursor: pointer;
-		white-space: nowrap; // Запобігає переносу тексту всередині кнопки
-		font-size: 13px;
-		font-weight: 400;
+  &__btn,
+  &__select {
+    max-width: 200px; // Максимальна ширина кнопки
+    padding: clamp(8px, 2vw, 10px) clamp(10px, 3vw, 38px); // Адаптивні відступи
+    height: clamp(35px, 4vw, 40px); // Адаптивна висота
+    font-size: clamp(14px, 2vw, 16px); // Адаптивний розмір шрифту
+    border-radius: 3.13rem;
+    background: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; // Запобігає переносу тексту всередині кнопки
+    font-size: 13px;
+    font-weight: 400;
 
-		&-select {
-			box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
-			color: $background-color;
-			background: $text-color;
-		}
+    &-select {
+      box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
+      color: $background-color;
+      background: $text-color;
+    }
 
-		&-icon {
-			height: clamp(35px, 4vw, 40px); // Адаптивна висота
-			font-size: clamp(14px, 2vw, 16px); // Адаптивний розмір шрифту
-			border-radius: 3.13rem;
-			background: rgb(255, 255, 255);
-			border: none;
-			cursor: pointer;
-			white-space: nowrap; // Запобігає переносу тексту всередині кнопки
-		}
-	}
+    &-icon {
+      height: clamp(35px, 4vw, 40px); // Адаптивна висота
+      font-size: clamp(14px, 2vw, 16px); // Адаптивний розмір шрифту
+      border-radius: 3.13rem;
+      background: rgb(255, 255, 255);
+      border: none;
+      cursor: pointer;
+      white-space: nowrap; // Запобігає переносу тексту всередині кнопки
+    }
+  }
 
-	&__btnsDivoider {
-		margin-left: auto;
-		// width: auto;
-		@media (max-width: $breakpoint-md) {
-			display: none;
-		}
+  &__btnsDivoider {
+    margin-left: auto;
+    // width: auto;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
 
-	}
+  }
+
+
+  .choices {
+    border-radius: 50px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 9px 0px rgba(25, 25, 25, 0.1);
+    //&[data-type*=select-one]::after {
+    //  border-color: $primary-color transparent transparent;
+    //}
+    //&[data-type*=select-one].is-open::after {
+    //  //border-color: $primary-color transparent transparent;
+    //}
+    &__inner {
+      border: none;
+      padding: 3.5px 7.5px 3.75px;
+    }
+  }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+}

@@ -71,6 +71,9 @@ body {
 .hidden {
 	display: none;
 }
+.form__input-hidden{
+	display: none;
+}
 
 //services btn
 .button {
@@ -103,7 +106,6 @@ body {
 .page {
 	&__title {
 		font-weight: 500;
-		line-height: clamp(1rem, 2.2vw, 3.75rem);
 		margin-bottom: 35px;
 		font-size: clamp(2.6rem, 2.2vw, 3.5rem);
 	}
