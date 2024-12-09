@@ -30,6 +30,7 @@
 @import "./components/section-baner.scss";
 @import "./components/section-general.scss";
 @import "./components/footer.scss";
+@import "./components/tooltip.scss";
 
 @import "./components/auto-on-commission.scss";
 @import "./components/banner.scss";
@@ -44,12 +45,14 @@
 body {
 	background-color: $background-color;
 	overflow-x: hidden;
+	min-width: 320px;
 }
 
 .container {
 	max-width: $container-width;
 	margin: 0 auto;
 	padding: 5px;
+	overflow-x: hidden;
 
 	@media (min-width: 576px) {
 		max-width: 540px;
@@ -70,6 +73,11 @@ body {
 
 .hidden {
 	display: none;
+}
+
+/* приховуємо картку card-car-empty на tab: "продані", "усі"  */
+.hidden-force {
+    display: none!important;
 }
 .form__input-hidden{
 	display: none;
@@ -115,4 +123,14 @@ body {
 		line-height: 2rem;
 		margin-bottom: 25px;
 	}
+}
+
+html {
+    scroll-behavior: smooth;
+}
+section {
+     margin-top: 45px;
+}
+section.baner{
+		margin-top: 0;
 }

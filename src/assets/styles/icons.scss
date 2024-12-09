@@ -16,6 +16,10 @@
     background-image: url(../images/icons/like.svg);
   }
 
+  &__like {
+    cursor: pointer;
+  }
+
   &__user {
     background-image: url(../images/icons/user.svg);
   }
@@ -134,6 +138,10 @@
 
   &__battery-vertical {
     background-image: url(../images/icons/battery-vertical.svg);
+  }
+
+  &__viber {
+    background-image: url(../images/icons/brand-viber.svg);
   }
 }
 

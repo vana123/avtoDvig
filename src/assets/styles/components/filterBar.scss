@@ -40,13 +40,17 @@
     }
 
     &-icon {
-      height: clamp(35px, 4vw, 40px); // Адаптивна висота
       font-size: clamp(14px, 2vw, 16px); // Адаптивний розмір шрифту
       border-radius: 3.13rem;
       background: rgb(255, 255, 255);
       border: none;
       cursor: pointer;
       white-space: nowrap; // Запобігає переносу тексту всередині кнопки
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -77,5 +81,46 @@
   }
 }
 
-@media (max-width: 576px) {
+/* кнопки форми фільтрів */
+.reset-btn {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.filter-form form {
+  padding-top: 50px;
+}
+
+.filter-form .close-btn {
+  right: 24px;
+  top: 12px;
+}
+
+.filter-form .button {
+  padding: 5px 0px;
+}
+
+.filterBar .choices {
+  height: 40px;
+}
+
+.filterBar .choices[data-type*=select-one] .choices__inner {
+  padding: 4.5px 7.5px;
+}
+
+div.filter-form select {
+  height: 30px;
+  margin: 6px 0;
 }

@@ -9,7 +9,16 @@
   border-radius: 1.25rem;
   width: 100%;
 
+  position: relative;
+  transition: 0.4s;
+
   gap: 35px;
+
+  &__footer {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+  }
 
   &__title {
     font-size: 1.5rem;
@@ -37,4 +46,18 @@
   }
 }
 
+.advantage span.icon {
+    float: right;
+}
+.advantage span.icon svg path {
+    fill: red;
+}
 
+.advantage:hover {
+    background: red;
+    color: white;
+}
+
+.advantage:hover span.icon svg path {
+    fill: white;
+}

@@ -211,3 +211,39 @@ $form-border-radius: 40px;
   }
 }
 
+
+.base-form li {
+    list-style: none;
+}
+
+/* Форма Замовлення автомобіля */
+
+.base-form fieldset > div {
+    /* grid-template-columns: 1fr 1fr 1fr;  замінив на */
+    grid-template-columns: 1fr 1fr;
+}
+
+/* base-form для старої версії Django  так як там ul замість div */
+.base-form fieldset > ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.base-form fieldset > ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+/* у base-form забрати прокрутку */
+.base-form{
+    overflow-y: auto;
+}
+
+/* замінив на дві колонки у формах checkbox та radiobutton */
+.base-form fieldset > div {
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr;
+}
+
+

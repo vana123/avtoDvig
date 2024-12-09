@@ -61,3 +61,19 @@ span.services__icon svg {
   height: 83px;
   width: 83px;
 }
+
+
+/* послуги у дві колонки для мобільного пристрою */
+@media screen and (max-width: 768px) {
+    .baner__content {
+        margin-bottom: 72px;
+    }
+    .services__icon,
+    span.services__icon svg{
+        width: 64px;
+        height: 64px;
+    }
+    .services__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

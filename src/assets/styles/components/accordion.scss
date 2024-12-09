@@ -79,3 +79,35 @@
 		font-size: clamp(13px, 2vw, 14px); // Мінімальний розмір шрифту
 	}
 }
+
+
+
+/* акордеон сервісів */
+
+.accordion-panel.active h2,
+.accordion:hover h2 {
+    color: #e30613;
+    background-color: white!important;
+}
+
+.accordion-panel.active .panel{
+    display: block;
+}
+.accordion-panel .panel{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: none;
+}
+
+.accordion-panel:hover,
+.accordion-panel.active {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.services__page > div {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+}
+
+.accordion-panel.active .accordion:after {
+    transform: rotate(180deg) translateX(25%);
+}

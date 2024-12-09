@@ -105,3 +105,40 @@
     gap: 8px;
   }
 }
+
+/* кнопка <ДЕТАЛЬНІШЕ> hover ефект */
+.card-car .btn {
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+.card-car .btn:hover {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+}
+
+/* інформаційне повідомлення або статус  відображати у каталозі <ПРОДАНО> */
+.card-car__header__a-wrapper{
+    position: relative;
+}
+.card-car span.tip,
+.card-car span.sold {
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    border-radius: 3.13rem;
+    padding: 2px 22px;
+    width: fit-content;
+    top: 10px;
+    font-weight: bold;
+}
+.card-car span.sold {
+    background-color: #FFE9E9;
+    color: #E30613;
+}
+.card-car .tip {
+    left: 10px;
+    background-color: white;
+    color: #E30613;
+    border: 1px solid red;
+}
