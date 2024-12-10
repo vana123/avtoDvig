@@ -1,20 +1,52 @@
 @import "../variables.scss";
 
 .product {
-  overflow: hidden;
+  //overflow: hidden;
+  @media (max-width: $breakpoint-lg) {
+    margin-top: -50px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    margin: 0 auto;
+    padding: 5px;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 5px;
+
+
+  }
 
   &__wraper {
+    @media (min-width: $breakpoint-lg) {
+      border-radius: 35px;
+      box-shadow: 0px 0px 9px 0px rgba(25, 25, 25, 0.1);
+      /* #FFFFFF */
+      background: rgb(255, 255, 255);
+      padding: 35px;
+
+    }
     display: flex;
+    justify-content: space-between;
     gap: 43px;
-    border-radius: 35px;
-    box-shadow: 0px 0px 9px 0px rgba(25, 25, 25, 0.1);
-    /* #FFFFFF */
-    background: rgb(255, 255, 255);
-    padding: 35px;
     padding-bottom: 70px;
 
     @media (max-width: $breakpoint-lg) {
       flex-direction: column;
+      gap: 10px;
+      //padding: 20px;
     }
   }
 
@@ -22,11 +54,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: fit-content;
-    margin: auto 0;
-    width: calc(70% - 43px);
+    //width: calc(70% - 43px);
     @media (max-width: $breakpoint-lg) {
-      width: 100%;
+      width: 100vw;
     }
 
     .product__imgs {
@@ -39,8 +69,8 @@
       .product__img {
         display: none;
         width: 100%;
-        max-width: 48.44rem;
-        max-height: 41.63rem;
+        //max-width: 48.44rem;
+        //max-height: 41.63rem;
         transition: opacity 0.5s ease;
         border-radius: 1.25rem;
         height: 100%;
@@ -51,6 +81,7 @@
 
         &.active {
           display: block;
+          object-fit: cover;
         }
       }
     }
@@ -94,19 +125,44 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
-    width: 30%;
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: 576px) {
+      width: 540px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      width: 720px;
+      margin: 0 auto;
+
+    }
+
     @media (max-width: $breakpoint-lg) {
-      width: 100%;
+      border-radius: 35px;
+      box-shadow: 0px 0px 9px 0px rgba(25, 25, 25, 0.1);
+      /* #FFFFFF */
+      background: rgb(255, 255, 255);
+      padding: 20px;
+    }
+
+    &-wraper {
+      @media (max-width: 560px) {
+        padding: 20px;
+      }
     }
 
     .card-car__body p {
-      font-size: clamp(0.6rem, 2.2vw, 1.1rem);
+      @media (max-width: $breakpoint-lg) {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
     }
   }
 
   &__header {
     h1 {
-      font-size: 28px;
+      font-size: clamp(1rem, 0.25rem + 4vw, 1.75rem);
       font-weight: 500;
       line-height: 32px;
     }
@@ -418,9 +474,14 @@
   height: 2rem;
 }
 
+.youtube-360 .icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
 span.measure {
-  font-size: small;
-  font-weight: bold;
+  //font-size: small;
+  //font-weight: bold;
   margin-left: 2px;
 }
 
@@ -443,6 +504,9 @@ span.measure {
   padding: 5px 10px;
   border: 1px solid red;
   border-radius: 3.13rem;
+  z-index: 1;
+  top: 40px;
+  left: 40px;
 }
 
 /* блок можливий розрахунок рівномірне розподілення карточок */

@@ -32,7 +32,7 @@
     white-space: nowrap; // Запобігає переносу тексту всередині кнопки
     font-size: 13px;
     font-weight: 400;
-
+    height: 40px;
     &-select {
       box-shadow: 0rem 0rem 0.56rem 0rem rgba(25, 25, 25, 0.1);
       color: $background-color;

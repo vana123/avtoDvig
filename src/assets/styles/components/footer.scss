@@ -13,6 +13,7 @@ $mobile_footer_width: 768px;
 
   &__content {
     display: flex;
+    justify-content: right;
     gap: 1px;
     flex-wrap: wrap;
     padding: 0 5px;
@@ -33,6 +34,7 @@ $mobile_footer_width: 768px;
     span {
       font-weight: 700;
     }
+
     display: block;
     font-size: clamp(2rem, 1.935rem + 1.848vw, 3.5rem);
     font-weight: 200;
@@ -51,6 +53,8 @@ $mobile_footer_width: 768px;
     //width: 230px;
     width: 50%;
     margin-bottom: 15px;
+    width: 49%;
+    margin-bottom: 0;
     @media screen and (min-width: $mobile_footer_width) {
       grid-area: logo;
     }
@@ -132,12 +136,14 @@ $mobile_footer_width: 768px;
   }
 
   &__adres {
-    font-size: 1.13rem;
+    font-size: clamp(0.9rem, 0.0513rem + 0.0619vw, 1.13rem);
     font-weight: 400;
     line-height: 1.75rem;
+    text-align: center;
+    width: 100%;
     @media screen and (min-width: $mobile_footer_width) {
       grid-area: adres;
-      align-self: end;
+      align-self: center;
     }
   }
 
@@ -170,6 +176,8 @@ $mobile_footer_width: 768px;
 .footer__phone {
   color: rgb(114 106 106);
   border: 2px solid rgb(114 106 106);
+  display: flex;
+  align-items: flex-end;
 }
 
 .footer__phone .icon__phone {
@@ -178,10 +186,12 @@ $mobile_footer_width: 768px;
 
 /* footer logo */
 .footer__logo svg {
+  //filter: initial;
+  max-width: 200px;
   @media screen and (max-width: $mobile_footer_width) {
     width: 100%;
   }
   width: 262px;
   height: 93px;
-  filter: brightness(0) invert(1);
+  //filter: brightness(0) invert(1);
 }

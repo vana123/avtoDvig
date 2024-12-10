@@ -12,6 +12,15 @@
   justify-self: center;
   overflow: hidden;
 
+  h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(0.6rem, 3.2vw, 1.4rem);
+}
+
   &__titel {
     font-size: clamp(0.6rem, 4.2vw, 1.5rem); // Менший розмір шрифту
   }
@@ -21,6 +30,7 @@
     max-height: 257px;
 
     &__a-wrapper {
+       display: flex;
       max-height: 257px;
       display: block;
       aspect-ratio: 1.33;
@@ -29,20 +39,21 @@
 
   &__body {
     display: grid;
-    grid-template-columns: max-content max-content;
+     grid-template-columns: min-content min-content;
     justify-content: space-between;
-    gap: 5%; // Відступи між елементами у відсотках
-    height: fit-content;
-
+    gap: 12px; // Відступи між елементами у відсотках
+    height: auto;
 
     p {
       display: flex;
       align-items: center;
-      font-size: clamp(0.6rem, 2.2vw, 1rem); // Менший розмір шрифту
+      font-size: clamp(0.625rem, 0.25rem + 1vw, 1rem);
+      width: fit-content;
+
 
       & .card-car__body-icon {
+        margin-right: 15px;
         filter: invert(58%) sepia(89%) saturate(2%) hue-rotate(314deg) brightness(88%) contrast(88%);
-        margin-right: 4%;
       }
     }
 
