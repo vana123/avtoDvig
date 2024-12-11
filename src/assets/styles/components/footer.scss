@@ -62,10 +62,10 @@ $mobile_footer_width: 768px;
 
   &__phones {
     columns: 1;
-    width: 40%;
+    width: 50%;
     @media screen and (min-width: $mobile_footer_width) {
+      display: flex;
       grid-area: phones;
-      width: fit-content;
       justify-self: end;
     }
   }
